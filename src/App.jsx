@@ -1,10 +1,11 @@
 import './App.css'
+import Login from './components/Login/Login'
 
 function App() {
 
   return (
     <>
-     <p>Frontend e-commerce</p>
+     <Login/>
     </>
   )
 }
