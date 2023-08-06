@@ -2,11 +2,22 @@ import React, { useContext } from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
 
-const Login = () => {
-  const { login } = useContext(UserContext);
+// body backend register/create
+// {
+//     "name_user": "Alison",
+//     "last_name": "Smith",
+//     "email": "alisonSmith@example.com",
+//     "password": "qwertys"
+
+// }
+
+
+
+const Register = () => {
+  const { register } = useContext(UserContext);
     const onFinish = (values) => {
-        //console.log('Success:', values);
-        login(values)
+        console.log('Success:', values);
+        register(values)
       };
       
       const onFinishFailed = (errorInfo) => {
@@ -32,6 +43,33 @@ const Login = () => {
     onFinishFailed={onFinishFailed}
     autoComplete="off"
   >
+    
+    <Form.Item
+      label="Name"
+      name="name_user"
+      rules={[
+        {
+          required: true,
+          message: 'Please input your name!',
+        },
+      ]}
+    >
+      <Input />
+    </Form.Item>
+
+    <Form.Item
+      label="Last_name"
+      name="last_name"
+      rules={[
+        {
+          required: true,
+          message: 'Please input your last name!',
+        },
+      ]}
+    >
+      <Input />
+    </Form.Item>
+    
     <Form.Item
       label="Email"
       name="email"
@@ -91,4 +129,4 @@ const Login = () => {
 
 
 
-export default Login
+export default Register

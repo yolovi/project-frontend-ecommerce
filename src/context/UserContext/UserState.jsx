@@ -26,12 +26,19 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+  const register = async (user) => {
+    console.log(user)
+    const res = await axios.post(API_URL + "/users", user); //url de la api y la ruta que pusimos en backend, user: el que se conecta en frontend por form
+
+  }
+
   return (
     <UserContext.Provider
       value={{
         token: state.token,
         user: state.user,
         login,
+        register,
       }}
     >
       {children}

@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Login from "./components/Login/Login";
 import { UserProvider } from "./context/UserContext/UserState";
+import Login from "./components/Login/Login";
+import Register from "./components/Login/Register";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <BrowserRouter>
         <UserProvider>
           <Routes>
+            <Route path="/" element={<Register />} />
             <Route path="/login" element={<Login />} />
           </Routes>
         </UserProvider>
