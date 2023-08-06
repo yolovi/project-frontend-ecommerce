@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
+import { UserContext } from '../../context/UserContext/UserState';
 
 const Login = () => {
+  const { login } = useContext(UserContext);
     const onFinish = (values) => {
-        console.log('Success:', values);
+        //console.log('Success:', values);
+        login(values)
       };
       
       const onFinishFailed = (errorInfo) => {
@@ -30,12 +33,12 @@ const Login = () => {
     autoComplete="off"
   >
     <Form.Item
-      label="Username"
-      name="username"
+      label="Email"
+      name="email"
       rules={[
         {
           required: true,
-          message: 'Please input your username!',
+          message: 'Please input your email!',
         },
       ]}
     >

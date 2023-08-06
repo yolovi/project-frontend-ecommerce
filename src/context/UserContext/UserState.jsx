@@ -1,5 +1,6 @@
 import { createContext, useReducer } from "react";
 import userReducer from "./UserReducer";
+import axios from "axios"; //hay que instalar axios: npm i axios y después autoimportar
 
 const token = JSON.parse(localStorage.getItem("token"));
 
@@ -8,19 +9,20 @@ const initialState = {
   user: null,
 };
 
-const API_URL = "http://localhost:3000";
+const API_URL = "http://localhost:3000"; // la url del backend
 
 export const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, initialState);
-
+//guardaremos 2 veces el token del user en el userState (dispatch > payload) y en el localStorage
   const login = async (user) => {
-    const res = await axios.post(API_URL + "/users/login", user);
+    console.log(user)
+    const res = await axios.post(API_URL + "/users/login", user); //url de la api y la ruta que pusimos en backend, user: el que se conecta en frontend por form
     dispatch({
-      type: "LOGIN",
-      payload: res.data,
+      type: "LOGIN", //es el CASE que corresponde con el switch del UserReducer
+      payload: res.data, //aquí se guarda el token que recoge de res.data
     });
-    if (res.data) {
-      localStorage.setItem("token", JSON.stringify(res.data.token));
+    if (res.data) { //si ha ido bien la petición
+      localStorage.setItem("token", JSON.stringify(res.data.token));//aquí se guarda el token, para que el usuario no se desconecte al refrescar la pág.
     }
   };
 

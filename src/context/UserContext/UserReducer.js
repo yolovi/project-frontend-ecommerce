@@ -3,7 +3,7 @@ const users = (state, action) => {
         case "LOGIN":
             return {
                 ...state,
-                token: action.payload.token
+                token: action.payload.token,
             };
             default:
                 return state;
