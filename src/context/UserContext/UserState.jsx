@@ -45,6 +45,23 @@ export const UserProvider = ({ children }) => {
         payload: res.data, // y aquí lo guardaremos mediante el case de UserReducer
       })
   };
+  const logout = async () => {
+    const token = JSON.parse(localStorage.getItem("token"));
+    const res = await axios.delete(API_URL + "/users/logout",  
+    {
+      headers: {
+        authorization: token,
+      },
+    });
+    dispatch({
+      type: "LOGOUT",
+      payload: res.data,
+    });
+    if (res.data) {
+      localStorage.removeItem("token");
+    }
+  };
+
 
 
   return (
@@ -55,6 +72,7 @@ export const UserProvider = ({ children }) => {
         login,
         register,
         getUserLogged,
+        logout,
       }}
     >
       {children}

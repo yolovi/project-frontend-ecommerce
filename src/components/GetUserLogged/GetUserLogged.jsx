@@ -4,6 +4,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { Spin, Card, Space } from "antd";
 
 
+
 const antIcon = ( //icono spin de ant para utilizar en el if para darle tiempo a montar el componente
   <LoadingOutlined
     style={{
