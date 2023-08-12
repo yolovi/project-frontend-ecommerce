@@ -31,18 +31,18 @@ export const UserProvider = ({ children }) => {
     }
   };
   const getUserLogged = async () => {
-    const token = JSON.parse(localStorage.getItem("token"));
+    const token = JSON.parse(localStorage.getItem("token")); //para dar acceso al usuario autenticado(si en la ruta backend lo solicita): recogemos token de usuario loggeado y se lo pasamos por headers al authoritation
     const res = await axios.get(
-      API_URL + "/users/infoLogged",
+      API_URL + "/users/orders", //TODO: crear en backend userLogged (para traer la info de usuario y cambiar esta linea)
       {
         headers: {
-          authorization: token,
+          authorization: token, 
         },
       }
       );
       dispatch({
         type: "GET_USER_LOGGED",
-        payload: res.data,
+        payload: res.data, // y aquí lo guardaremos mediante el case de UserReducer
       })
   };
 

@@ -4,20 +4,20 @@ import { UserProvider } from "./context/UserContext/UserState";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import GetUserLogged from "./components/GetUserLogged/GetUserLogged";
-
-
-
+//import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <UserProvider>
-          <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/profile" element={<GetUserLogged />} />
-          </Routes>
+          {/* <Header> */}
+            <Routes>
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/profile" element={<GetUserLogged />} />
+            </Routes>
+          {/* </Header> */}
         </UserProvider>
       </BrowserRouter>
     </>
