@@ -18,7 +18,6 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/profile" element={<GetUserLogged />} />
-              <Route path="/logout" element={<Logout />} />
             </Routes>
           </Header>
         </UserProvider>

@@ -53,11 +53,11 @@ export const UserProvider = ({ children }) => {
         authorization: token,
       },
     });
-    dispatch({
+    dispatch({ //vaciamos el estado > cuando vaya al UserReducer le diremos que user y token sean null
       type: "LOGOUT",
       payload: res.data,
     });
-    if (res.data) {
+    if (res.data) { // eliminamos el token del localStorage
       localStorage.removeItem("token");
     }
   };
