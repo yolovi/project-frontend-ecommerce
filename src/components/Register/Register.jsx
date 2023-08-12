@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
+// import { UserContext } from '../../../context/UserContext/UserState';
 
 // body backend register/create
 // {
@@ -58,7 +59,7 @@ const Register = () => {
     </Form.Item>
 
     <Form.Item
-      label="Last_name"
+      label="Last name"
       name="last_name"
       rules={[
         {
@@ -78,10 +79,11 @@ const Register = () => {
           required: true,
           message: 'Please input your email!',
         },
-        // {
-        //   type: "email", //validación tipo email
-        //   message: 'Please input a correct email!',
-        // },
+        {
+          type: "email", //validación tipo email
+          message: 'Please input a correct email!',
+        },
+        //TODO: poner validación email único, para que se le muestre a usuario, en el backend está esta validación
       ]}
     >
       <Input />
