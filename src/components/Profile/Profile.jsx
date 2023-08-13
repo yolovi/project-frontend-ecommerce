@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin, Card, Space } from "antd";
+import "./Profile.scss";
 
 
 
@@ -33,6 +34,8 @@ const GetUserLogged = () => {
           <p>{user.last_name}</p>
           <p>{user.email}</p>
         </Card>
+        <div className="message">General message</div>
+        <div className="message-success">Successfully message</div>
       </Space>
       {/* {console.log(user)} */}
     </div>
