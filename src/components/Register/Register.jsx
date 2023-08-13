@@ -3,17 +3,6 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
 
 
-// body backend register/create
-// {
-//     "name_user": "Alison",
-//     "last_name": "Smith",
-//     "email": "alisonSmith@example.com",
-//     "password": "qwertys"
-
-// }
-
-
-
 const Register = () => {
   const { register } = useContext(UserContext);
     const onFinish = (values) => {

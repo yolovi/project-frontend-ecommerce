@@ -1,0 +1,10 @@
+//variables -------------------------------------
+@import"../../colors.scss";
+$color: rgb(194, 126, 149);
+
+//scss -----------------------------------------
+.header {
+    button{
+        background-color: $primary-color;
+    }
+}

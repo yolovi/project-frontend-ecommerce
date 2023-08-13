@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
+import {UserDeleteOutlined, UserOutlined} from "@ant-design/icons";
+import "./Header.scss"
 
 //prueba6@example.com // para hacer las pruebas la password es pass
 
@@ -22,12 +24,13 @@ const Header = ({ children }) => {
           {token ? (
             <>
              <Link to="/profile"> Profile </Link>
-             <button onClick={logoutUser}>Logout</button> 
+             <button onClick={logoutUser}>Logout <UserDeleteOutlined /> </button> 
+             {/* Logout <UserDeleteOutlined onClick={logoutUser} />  También podemos poner solo el icono y la función onClick dentro de la etiqueta del icono */}
             </>
            ) : (
             <>
-            <Link to="/login"> Login / </Link>
-            <Link to="/register"> Register </Link>
+            <Link to="/login"> Login /  </Link>
+            <Link to="/register"> Register <UserOutlined /> </Link> 
             </>
           )}
         </span>

@@ -3,8 +3,7 @@ import "./App.css";
 import { UserProvider } from "./context/UserContext/UserState";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
-import GetUserLogged from "./components/GetUserLogged/GetUserLogged";
-import Logout from "./components/Logout/Logout";
+import GetUserLogged from "./components/Profile/Profile";
 import Header from "./components/Header/Header";
 
 
