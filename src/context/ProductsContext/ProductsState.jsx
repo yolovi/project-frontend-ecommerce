@@ -4,6 +4,7 @@ import ProductsReducer from "./ProductsReducer";
 
 const initialState = {
   products: [],
+  cart: [],
 };
 
 const API_URL = "http://localhost:3000";
@@ -20,11 +21,20 @@ export const ProductsProvider = ({ children }) => {
     return res;
   };
 
+  const addCart = (product) => { //añade el product al carrito (cart.state)
+    dispatch({ //para modificar el estado
+      type: "ADD_CART",
+      payload: product,
+    });
+  };
+
+
   return (
     <ProductsContext.Provider
       value={{
         products: state.products,
-        getProducts
+        getProducts,
+        addCart,
       }}
     >
       {children}
