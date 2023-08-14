@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
 import {
@@ -24,6 +24,12 @@ const Header = ({ children }) => {
     navigate("/login");
   };
 
+//se ejecuta cuando el componente cambia (en este caso [cart])
+//con el siguiente useEffect lo que hará es que cada vez que cambie el estado del carrito que lo guarde en el localStorage (esto lo hace cada vez que se añade un producto al carrito)  
+useEffect(() => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}, [cart]);
+
   return (
     <>
       <nav className="header">
@@ -35,7 +41,7 @@ const Header = ({ children }) => {
             <>
               <Link to="/profile"> Profile / </Link>
               <Link to="/cart">
-              <Badge count={cart.length}  overflowCount={10} offset={[10]} size="small">
+              <Badge count={cart.length}  overflowCount={99} offset={[10]} size="small">
                 <ShoppingCartOutlined />{" "}
                 </Badge>
               </Link>

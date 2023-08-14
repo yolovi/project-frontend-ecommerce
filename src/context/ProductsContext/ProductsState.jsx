@@ -1,6 +1,7 @@
 import { createContext, useReducer } from "react";
 import axios from "axios";
 import ProductsReducer from "./ProductsReducer";
+import products from "./ProductsReducer";
 
 //nos traemos cart del localStorage para poder usarlo en el estado de cart (initialState)
 const cart = JSON.parse(localStorage.getItem("cart"));
@@ -32,6 +33,12 @@ export const ProductsProvider = ({ children }) => {
     });
   };
 
+  const clearCart = () => { //no hay que poner nada en argumento porque no recoge nada, vamos a borrar el estado
+    dispatch({
+      type: "CLEAR_CART",
+    })
+  }
+
 
   return (
     <ProductsContext.Provider
@@ -41,6 +48,7 @@ export const ProductsProvider = ({ children }) => {
         cart: state.cart,  
         getProducts,
         addCart,
+        clearCart,
       }}
     >
       {children}

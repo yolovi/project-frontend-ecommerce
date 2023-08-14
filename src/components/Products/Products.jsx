@@ -13,12 +13,7 @@ const Products = () => {
     products;
   }, []);
 
-//se ejecuta cuando el componente cambia (en este caso [cart])
-//con el siguiente useEffect lo que hará es que cada vez que cambie el estado del carrito que lo guarde en el localStorage (esto lo hace cada vez que se añade un producto al carrito)  
-useEffect(() => {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}, [cart]);
-
+//El useEffect cuando el componente de cart cambia (se llena de productos o se vacía, lo hemos movido al componente Header, porque este componente siempre está por loo que no hay que repetir el mismo código en varios componentes)
 
   return (
     <div className="products-container">
