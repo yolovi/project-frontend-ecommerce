@@ -4,14 +4,15 @@ import { LoadingOutlined } from "@ant-design/icons";
 import { Spin, Card, Space } from "antd";
 import "./Profile.scss";
 
-const antIcon = ( //icono spin de ant para utilizar en el if para darle tiempo a montar el componente
-  <LoadingOutlined
-    style={{
-      fontSize: 24,
-    }}
-    spin
-  />
-);
+const antIcon = //icono spin de ant para utilizar en el if para darle tiempo a montar el componente
+  (
+    <LoadingOutlined
+      style={{
+        fontSize: 24,
+      }}
+      spin
+    />
+  );
 
 const GetUserLogged = () => {
   const { getUserLogged, user } = useContext(UserContext);
@@ -27,8 +28,7 @@ const GetUserLogged = () => {
   return (
     <div>
       <Space direction="vertical" size={16}>
-        <Card size="small" title={user.name_user} 
-        style={{ width: 300 }}>
+        <Card size="small" title={user.name_user} style={{ width: 300 }}>
           <p>{user.last_name}</p>
           <p>{user.email}</p>
         </Card>

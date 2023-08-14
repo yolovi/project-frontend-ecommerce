@@ -7,6 +7,7 @@ import GetUserLogged from "./components/Profile/Profile";
 import Header from "./components/Header/Header";
 import { ProductsProvider } from "./context/ProductsContext/ProductsState";
 import Product from "./components/Products/Products";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/profile" element={<GetUserLogged />} />
+                <Route path="/cart" element={<Cart />} />
               </Routes>
             </Header>
           </BrowserRouter>

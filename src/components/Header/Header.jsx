@@ -1,8 +1,14 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
-import { UserDeleteOutlined, UserOutlined } from "@ant-design/icons";
+import {
+  UserDeleteOutlined,
+  UserOutlined,
+  ShoppingCartOutlined,
+} from "@ant-design/icons";
 import "./Header.scss";
+import { Badge } from "antd";
+import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 
 //prueba6@example.com // para hacer las pruebas la password es pass
 
@@ -11,6 +17,7 @@ import "./Header.scss";
 const Header = ({ children }) => {
   //Al agregar {children} en el componente Header, permites que los componentes  (ej, login, profile) pasados como contenido entre las etiquetas <Header> en tu componente App se rendericen dentro de él.
   const { token, logout } = useContext(UserContext); //importamos el logout del userContext(UserState) para poder usar la función en la función logoutUser que vamos a crear
+  const {cart} = useContext(ProductsContext)
   const navigate = useNavigate();
   const logoutUser = () => {
     logout(); //desloguea al presionar el botón
@@ -26,9 +33,14 @@ const Header = ({ children }) => {
         <span>
           {token ? (
             <>
-              <Link to="/profile"> Profile </Link>
+              <Link to="/profile"> Profile / </Link>
+              <Link to="/cart">
+              <Badge count={cart.length}  overflowCount={10} offset={[10]} size="small">
+                <ShoppingCartOutlined />{" "}
+                </Badge>
+              </Link>
               <button onClick={logoutUser}>
-                Logout <UserDeleteOutlined />{" "}
+                Logout <UserDeleteOutlined />
               </button>
               {/* Logout <UserDeleteOutlined onClick={logoutUser} />  También podemos poner solo el icono y la función onClick dentro de la etiqueta del icono */}
             </>
@@ -49,5 +61,3 @@ const Header = ({ children }) => {
 };
 
 export default Header;
-
-
