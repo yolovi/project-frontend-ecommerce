@@ -5,22 +5,26 @@ import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import GetUserLogged from "./components/Profile/Profile";
 import Header from "./components/Header/Header";
-
+import { ProductsProvider } from "./context/ProductsContext/ProductsState";
+import Product from "./components/Products/Products";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <UserProvider>
-          <Header>
-            <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/profile" element={<GetUserLogged />} />
-            </Routes>
-          </Header>
-        </UserProvider>
-      </BrowserRouter>
+      <UserProvider>
+        <ProductsProvider>
+          <BrowserRouter>
+            <Header>
+              <Routes>
+                <Route path="/" element={<Product />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/profile" element={<GetUserLogged />} />
+              </Routes>
+            </Header>
+          </BrowserRouter>
+        </ProductsProvider>
+      </UserProvider>
     </>
   );
 }

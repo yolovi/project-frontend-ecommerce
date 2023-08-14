@@ -21,6 +21,9 @@ const Header = ({ children }) => {
     <>
       <nav className="header">
         <span>
+        <Link to="/"> Home /</Link>
+        </span>
+        <span>
           {token ? (
             <>
              <Link to="/profile"> Profile </Link>

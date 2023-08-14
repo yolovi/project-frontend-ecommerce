@@ -1,0 +1,19 @@
+//variables -------------------------------------
+@import"../../colors.scss";
+$color: rgb(194, 126, 149);
+
+//scss -----------------------------------------
+.header {
+    button{
+        background-color: $primary-color;
+    }
+}
+
+.products-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+
+}
