@@ -15,7 +15,7 @@ function App() {
       <UserProvider>
         <ProductsProvider>
           <BrowserRouter>
-            <Header>
+            <Header />
               <Routes>
                 <Route path="/" element={<Product />} />
                 <Route path="/login" element={<Login />} />
@@ -23,7 +23,7 @@ function App() {
                 <Route path="/profile" element={<GetUserLogged />} />
                 <Route path="/cart" element={<Cart />} />
               </Routes>
-            </Header>
+            
           </BrowserRouter>
         </ProductsProvider>
       </UserProvider>

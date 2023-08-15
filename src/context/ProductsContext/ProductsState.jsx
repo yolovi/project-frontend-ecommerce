@@ -1,7 +1,7 @@
 import { createContext, useReducer } from "react";
 import axios from "axios";
 import ProductsReducer from "./ProductsReducer";
-import products from "./ProductsReducer";
+
 
 //nos traemos cart del localStorage para poder usarlo en el estado de cart (initialState)
 const cart = JSON.parse(localStorage.getItem("cart"));

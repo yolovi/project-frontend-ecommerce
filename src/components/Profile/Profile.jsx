@@ -29,13 +29,13 @@ const GetUserLogged = () => {
     <div>
       <Space direction="vertical" size={16}>
         <Card size="small" title={user.name_user} style={{ width: 300 }}>
-          <p>{user.last_name}</p>
-          <p>{user.email}</p>
+          <p>Apellido: {user.last_name}</p>
+          <p>Email: {user.email}</p>
         </Card>
         <div className="message">General message</div>
         <div className="message-success">Successfully message</div>
       </Space>
-      {/* {console.log(user)} */}
+
     </div>
   );
 };

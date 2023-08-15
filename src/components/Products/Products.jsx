@@ -10,11 +10,9 @@ const Products = () => {
 //se ejecuta cuando se monta el componente
   useEffect(() => {
     getProducts();
-    products;
   }, []);
 
 //El useEffect cuando el componente de cart cambia (se llena de productos o se vacía, lo hemos movido al componente Header, porque este componente siempre está por loo que no hay que repetir el mismo código en varios componentes)
-
   return (
     <div className="products-container">
       {products.map((product, i) => {

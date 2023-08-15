@@ -14,7 +14,7 @@ import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 
 //Implementamos Logout en el nav para que esté accesible desde cualquier parte de la página, pero la lógica está en el componente Logout.
 
-const Header = ({ children }) => {
+const Header = () => {
   //Al agregar {children} en el componente Header, permites que los componentes  (ej, login, profile) pasados como contenido entre las etiquetas <Header> en tu componente App se rendericen dentro de él.
   const { token, logout } = useContext(UserContext); //importamos el logout del userContext(UserState) para poder usar la función en la función logoutUser que vamos a crear
   const {cart} = useContext(ProductsContext)
@@ -61,7 +61,6 @@ useEffect(() => {
           )}
         </span>
       </nav>
-      {children}
     </>
   );
 };

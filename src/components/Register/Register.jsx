@@ -1,13 +1,18 @@
 import React, { useContext } from 'react';
 import { Button, Checkbox, Form, Input } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
+import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
   const { register } = useContext(UserContext);
+  const navigate = useNavigate()
     const onFinish = (values) => {
-        console.log('Success:', values);
-        register(values)
+       // console.log('Success:', values);
+        register(values);
+        setTimeout(() => { //setTimeout para que le de tiempo a procesar la información
+          navigate("/login") 
+        }, 3000); 
       };
       
       const onFinishFailed = (errorInfo) => {
