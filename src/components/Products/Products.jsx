@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import { Card, Space } from "antd";
 import "./Products.scss";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const { getProducts, products, addCart, cart } = useContext(ProductsContext);
@@ -31,6 +32,7 @@ const Products = () => {
               <p>{product.price.toFixed(2)} €</p>
               {/* para que no se ejecute autom. la función de addCart y se convierte en un bucle, hay que meterla dentro de una función, para que se ejecute solo al clicar */}
               <button onClick={() => addCart(product)}>Add Cart</button>
+              <Link to={`/product/${product.id}`}>Details</Link>
             </Card>
           </Space>
         );

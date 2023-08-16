@@ -44,7 +44,7 @@ useEffect(() => {
               <Badge count={cart.length}  overflowCount={99} offset={[10]} size="small">
                 <ShoppingCartOutlined />{" "}
                 </Badge>
-              </Link>
+              </Link>            
               <button onClick={logoutUser}>
                 Logout <UserDeleteOutlined />
               </button>
