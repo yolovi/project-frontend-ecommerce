@@ -1,0 +1,64 @@
+import React, { useContext, useEffect } from "react";
+import { UserContext } from "../../context/UserContext/UserState";
+import { LoadingOutlined } from "@ant-design/icons";
+import { Spin, Card, Space } from "antd";
+import "./Profile.scss";
+import { Link } from "react-router-dom";
+
+const antIcon = //icono spin de ant para utilizar en el if para darle tiempo a montar el componente
+  (
+    <LoadingOutlined
+      style={{
+        fontSize: 24,
+      }}
+      spin
+    />
+  );
+
+const GetUserLogged = () => {
+  const { getUserLogged, user } = useContext(UserContext);
+  console.log(user);
+
+  useEffect(() => {
+    getUserLogged();
+    //metemos la función dentro del useEffect para que se ejecute cuando se monte el componente
+  }, []);
+
+  if (!user) {
+    // si no hay usuario cargará mensaje/spinner > es necesario esta linea para que le de tiempo a montar el componente antes de mostrar usuario y evitar un error
+    return <Spin indicator={antIcon} />;
+  }
+
+  console.log(user.Orders);
+  const orders = user.Orders;
+
+  const orderDetail = orders.map((order) => {
+    return {
+      idOrder: order.id,
+      date: order.createdAt,
+      products: order.Products.map((elem) => {
+        return {
+          nameProduct: elem.name_product,
+          price: elem.price,
+        };
+      }),
+    };
+  });
+  console.log(orderDetail);
+
+  return (
+    <div>
+      <Space direction="vertical" size={16}>
+        <Card size="small" title={user.name_user} style={{ width: 300 }}>
+          <p>Apellido: {user.last_name}</p>
+          <p>Email: {user.email}</p>
+        </Card>
+        <Link to={"/orders"}>Orders</Link>
+        <div className="message">General message</div>
+        <div className="message-success">Successfully message</div>
+      </Space>
+    </div>
+  );
+};
+
+export default GetUserLogged;

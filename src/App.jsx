@@ -9,6 +9,7 @@ import Register from "./components/Register/Register";
 import GetUserLogged from "./components/Profile/Profile";
 import Header from "./components/Header/Header";
 import Cart from "./components/Cart/Cart";
+import Orders from "./components/Orders/Orders";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/profile" element={<GetUserLogged />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/orders" element={<Orders />} />
             </Routes>
           </BrowserRouter>
         </ProductsProvider>
