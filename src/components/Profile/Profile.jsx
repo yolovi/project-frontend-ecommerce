@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { LoadingOutlined } from "@ant-design/icons";
-import { Spin, Space } from "antd";
+import { Spin, Space, Card } from "antd";
 import "./Profile.scss";
 
 const antIcon = (
@@ -26,10 +26,16 @@ const GetUserLogged = () => {
 
   return (
     <div>
+        <div>
       <Space direction="vertical" size={16}>
+        <Card size="small" title={user.name_user} style={{ width: 300 }}>
+          <p>Apellido: {user.last_name}</p>
+          <p>Email: {user.email}</p>
+        </Card>
         <div className="message">General message</div>
         <div className="message-success">Successfully message</div>
       </Space>
+    </div>
 
       {/* Renderizar los detalles de los pedidos */}
       {user.Orders.map((order) => (
