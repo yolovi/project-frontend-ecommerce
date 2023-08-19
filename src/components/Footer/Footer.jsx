@@ -15,6 +15,19 @@ import "./Footer.scss"
 
 const Footer = () => (
   <>
+  <footer className="footer">
+<p className="footer-by">
+  A project by{" "}
+  <a
+    href="https://github.com/yolovi"
+    target="_blank"
+  >
+    Yolanda López
+  </a>
+
+</p>
+</footer>
+  
     <Row>
       <Col span={3}>col-3</Col>
       <Col span={6}>col-6</Col>
@@ -28,4 +41,6 @@ const Footer = () => (
 );
 
 export default Footer;
+
+
  
