@@ -45,7 +45,13 @@ const Header = () => {
   //Si menuOpen era true, entonces p será true, y !p será false, lo que cerrará el menú.
   //Si menuOpen era false, entonces p será false, y !p será true, lo que abrirá el menú.
   const menuToggleHandler = () => {
-    setMenuOpen((p) => !p);
+    setMenuOpen((prevState) => !prevState);
+  };
+
+  const closeMenu = () => {
+    if (size.width <= 768) {
+      setMenuOpen(false);
+    }
   };
 
   const { token, logout } = useContext(UserContext); //importamos el logout del userContext(UserState) para poder usar la función en la función logoutUser que vamos a crear
@@ -76,13 +82,13 @@ const Header = () => {
           >
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" onClick={closeMenu}> Home </Link>
               </li>
               <li>
                 {token ? (
                   <div className="header__menu">
-                    <Link to="/profile"> Profile </Link>
-                    <Link to="/cart">
+                    <Link to="/profile" onClick={closeMenu}> Profile </Link>
+                    <Link to="/cart"  onClick={closeMenu}>
                       <Badge
                         count={cart.length}
                         overflowCount={99}
@@ -98,11 +104,11 @@ const Header = () => {
                   </div>
                 ) : (
                   <div className="header__menu">
-                    <Link className="btn btn__login" to="/login">
+                    <Link className="btn btn__login" to="/login"  onClick={closeMenu}>
                       {" "}
                       Login{" "}
                     </Link>
-                    <Link className="btn" to="/register">
+                    <Link className="btn" to="/register"  onClick={closeMenu}>
                       Register <UserOutlined />
                     </Link>
                   </div>
@@ -110,7 +116,7 @@ const Header = () => {
               </li>
 
               <li>
-                <Link to="/Contact">Contact</Link>
+                <Link to="/Contact"  onClick={closeMenu}>Contact</Link>
               </li>
             </ul>
           </nav>
