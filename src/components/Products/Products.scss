@@ -1,6 +1,5 @@
 //variables -------------------------------------
 @import"../../colors.scss";
-$color: rgb(194, 126, 149);
 
 //scss -----------------------------------------
 .header {
@@ -16,4 +15,8 @@ $color: rgb(194, 126, 149);
     gap: 10px;
     padding: 10px;
 
+}
+
+.card-border{
+    border-color: $gray-color;
 }

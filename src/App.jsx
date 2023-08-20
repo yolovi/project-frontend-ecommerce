@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { UserProvider } from "./context/UserContext/UserState";
 import { ProductsProvider } from "./context/ProductsContext/ProductsState";

@@ -19,14 +19,13 @@ const Products = () => {
       {products.map((product, i) => {
         //necesitamos el siguiente return para que se muestren los datos que están dentro del div (product.name_product, etc)
         return (
-          <Space direction="vertical" size={16} key={i}>
-            <Card
+          <Space direction="vertical" size={16} key={i} >
+            <Card className="card-border"
               size="small"
               key={product.id}
               title={product.name_product}
               style={{
                 width: 300,
-                borderColor: "pink",
               }}
             >
               <p>{product.price.toFixed(2)} €</p>
@@ -37,6 +36,31 @@ const Products = () => {
           </Space>
         );
       })}
+      <div>
+        //TODO: borrar lo siguiente:
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        </p>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
+        </p>
+      </div>
     </div>
   );
 };

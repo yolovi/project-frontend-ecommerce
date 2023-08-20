@@ -31,7 +31,7 @@ function ProductDetail() {
           title={product.name_product}
           style={{
             width: 300,
-            borderColor: "pink",
+            borderColor: "",
           }}
         >
           <h3>PRODUCT DESCRIPTION</h3>

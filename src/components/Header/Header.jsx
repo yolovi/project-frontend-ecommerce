@@ -11,6 +11,7 @@ import {
 import { Badge } from "antd";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import "./Header.scss";
+import TopBtn from "../TopBtn/TopBtn";
 
 //prueba6@example.com // para hacer las pruebas la password es pass
 
@@ -47,7 +48,6 @@ const Header = () => {
   const menuToggleHandler = () => {
     setMenuOpen((prevState) => !prevState);
   };
-
   const closeMenu = () => {
     if (size.width <= 768) {
       setMenuOpen(false);
@@ -71,24 +71,30 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        <div className="header__content">
-          <Link to="/" className="header__content__logo">
-            Logo
+        <div className="header-content">
+          <Link to="/" className="header-content-logo">
+            Hikari
           </Link>
           <nav
-            className={`${"header__content__nav"} 
+            className={`${"header-content-nav"}
         ${menuOpen && size.width < 768 ? `${"isMenu"}` : ""} 
         }`}
           >
             <ul>
               <li>
-                <Link to="/" onClick={closeMenu}> Home </Link>
+                <Link to="/" onClick={closeMenu}>
+                  {" "}
+                  Home{" "}
+                </Link>
               </li>
               <li>
                 {token ? (
-                  <div className="header__menu">
-                    <Link to="/profile" onClick={closeMenu}> Profile </Link>
-                    <Link to="/cart"  onClick={closeMenu}>
+                  <div className="header-menu">
+                    <Link to="/profile" onClick={closeMenu}>
+                      {" "}
+                      Profile{" "}
+                    </Link>
+                    <Link to="/cart" onClick={closeMenu}>
                       <Badge
                         count={cart.length}
                         overflowCount={99}
@@ -103,12 +109,16 @@ const Header = () => {
                     </button>
                   </div>
                 ) : (
-                  <div className="header__menu">
-                    <Link className="btn btn__login" to="/login"  onClick={closeMenu}>
+                  <div className="header-menu">
+                    <Link
+                      className="btn btn-login"
+                      to="/login"
+                      onClick={closeMenu}
+                    >
                       {" "}
                       Login{" "}
                     </Link>
-                    <Link className="btn" to="/register"  onClick={closeMenu}>
+                    <Link className="btn" to="/register" onClick={closeMenu}>
                       Register <UserOutlined />
                     </Link>
                   </div>
@@ -116,11 +126,13 @@ const Header = () => {
               </li>
 
               <li>
-                <Link to="/Contact"  onClick={closeMenu}>Contact</Link>
+                <Link to="/Contact" onClick={closeMenu}>
+                  Contact
+                </Link>
               </li>
             </ul>
           </nav>
-          <div className="header__content__toggle">
+          <div className="header-content-toggle">
             {!menuOpen ? (
               <MenuFoldOutlined onClick={menuToggleHandler} />
             ) : (
@@ -128,6 +140,7 @@ const Header = () => {
             )}
           </div>
         </div>
+        <TopBtn />
       </header>
     </>
   );
