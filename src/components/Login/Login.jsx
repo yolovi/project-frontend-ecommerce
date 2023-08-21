@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Checkbox, Form, Input, notification } from 'antd';
 import { UserContext } from '../../context/UserContext/UserState';
 import { useNavigate } from 'react-router-dom';
+import "./Login.scss"
 
 const Login = () => {
   const { login } = useContext(UserContext);
@@ -24,7 +25,7 @@ const Login = () => {
       };
 
     return (
-      <div>
+      <div className='form-container'>
         <Form
     name="basic"
     labelCol={{

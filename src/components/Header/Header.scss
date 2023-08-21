@@ -149,10 +149,10 @@
         &:active {
           border-color: $complementary-color;
           background: linear-gradient(
-            rgba($complementary-color, 0.2),
-            rgba($complementary-color, 0.3)
+            rgba($secondary-color, 0.2),
+            rgba($secondary-color, 0.3)
           );
-          color: $complementary-color;
+          color: $primary-color;
         }
 
         &-login {
@@ -175,7 +175,7 @@
       position: relative;
 
       &:hover {
-        color: rgb(162, 162, 246);
+        color: $primary-color;
       }
 
       @include breakpoint(md) {
