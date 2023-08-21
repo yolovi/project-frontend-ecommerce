@@ -89,21 +89,36 @@ const Header = () => {
               <li>
                 {token ? (
                   <div className="header-menu">
-                    <Link to="/profile" onClick={closeMenu} className="btn-hover-line">
+                    <Link
+                      to="/profile"
+                      onClick={closeMenu}
+                      className="btn-hover-line"
+                    >
                       {" "}
                       Profile{" "}
                     </Link>
-                    <Link to="/cart" onClick={closeMenu} className="btn-hover-line">
+                    <Link
+                      to="/cart"
+                      onClick={closeMenu}
+                      className=" btn-hover-line"
+                    >
                       <Badge
                         count={cart.length}
                         overflowCount={99}
                         offset={[10]}
                         size="small"
                       >
-                        <ShoppingCartOutlined />{" "}
+                        <ShoppingCartOutlined
+                          style={{
+                            fontSize: 20,
+                          }}
+                        />{" "}
                       </Badge>
                     </Link>
-                    <button onClick={logoutUser} className="btn-hover-line logout">
+                    <button
+                      onClick={logoutUser}
+                      className="btn-hover-line logout"
+                    >
                       Logout <UserDeleteOutlined />
                     </button>
                   </div>
@@ -134,7 +149,7 @@ const Header = () => {
                   onClick={closeMenu}
                   className="btn-hover-line"
                 >
-                  Contact
+                  About us
                 </Link>
               </li>
             </ul>

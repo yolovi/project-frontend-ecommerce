@@ -123,6 +123,7 @@
           }
         }
       }
+
       .btn {
         cursor: pointer;
         outline: none;
@@ -154,11 +155,6 @@
           background-color: rgb(32, 32, 32);
           color: #fff;
         }
-
-        &-logout {
-          background-color: rgb(32, 32, 32);
-          color: aqua;
-        }
       }
 
       &.isMenu {
@@ -181,6 +177,11 @@
       @include breakpoint(md) {
         display: none;
       }
+
     }
   }
 }
+
+// style={{
+//   fontSize: 30,
+// }}
