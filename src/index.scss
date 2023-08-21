@@ -22,6 +22,19 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+  .btn {
+    &-hover-line {
+      background: transparent;
+      border: none;
+      padding: 1em 1.5em;
+      color: $primary-color;
+      position: relative;
+      transition: 0.5s ease;
+    }}
+  
+}
+
 a {
   font-weight: 500;
   color: $complementary-dark-color;
@@ -66,15 +79,38 @@ button {
 button:hover {
   border-color: $complementary-color;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+
+.btn {
+  &-hover-line {
+    background: transparent;
+    border: none;
+    padding: 1em 1.5em;
+    //color: $primary-color;
+    position: relative;
+    transition: 0.5s ease;
+  }
+
+  &-hover-line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: $complementary-color;
+    transition: 0.5s ease;
+  }
+
+  &-hover-line:hover::before {
+    width: 100%;
+  }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: $secondary-color;
+    background-color: $primary-color;
   }
   a:hover {
     color: $complementary-color;
@@ -83,8 +119,6 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-
 
 /* -------- */
 .avatar {
@@ -102,5 +136,3 @@ button:focus-visible {
 .github-icon:hover {
   scale: 1.1;
 }
-
-

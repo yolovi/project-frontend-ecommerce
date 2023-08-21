@@ -82,19 +82,18 @@ const Header = () => {
           >
             <ul>
               <li>
-                <Link to="/" onClick={closeMenu}>
-                  {" "}
-                  Home{" "}
+                <Link to="/" onClick={closeMenu} className="btn-hover-line">
+                  Home
                 </Link>
               </li>
               <li>
                 {token ? (
                   <div className="header-menu">
-                    <Link to="/profile" onClick={closeMenu}>
+                    <Link to="/profile" onClick={closeMenu} className="btn-hover-line">
                       {" "}
                       Profile{" "}
                     </Link>
-                    <Link to="/cart" onClick={closeMenu}>
+                    <Link to="/cart" onClick={closeMenu} className="btn-hover-line">
                       <Badge
                         count={cart.length}
                         overflowCount={99}
@@ -104,21 +103,25 @@ const Header = () => {
                         <ShoppingCartOutlined />{" "}
                       </Badge>
                     </Link>
-                    <button onClick={logoutUser}>
+                    <button onClick={logoutUser} className="btn-hover-line logout">
                       Logout <UserDeleteOutlined />
                     </button>
                   </div>
                 ) : (
                   <div className="header-menu">
                     <Link
-                      className="btn btn-login"
                       to="/login"
                       onClick={closeMenu}
+                      className="btn-hover-line"
                     >
                       {" "}
                       Login{" "}
                     </Link>
-                    <Link className="btn" to="/register" onClick={closeMenu}>
+                    <Link
+                      to="/register"
+                      onClick={closeMenu}
+                      className="btn-hover-line"
+                    >
                       Register <UserOutlined />
                     </Link>
                   </div>
@@ -126,7 +129,11 @@ const Header = () => {
               </li>
 
               <li>
-                <Link to="/Contact" onClick={closeMenu}>
+                <Link
+                  to="/Contact"
+                  onClick={closeMenu}
+                  className="btn-hover-line"
+                >
                   Contact
                 </Link>
               </li>
