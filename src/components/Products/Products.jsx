@@ -63,77 +63,7 @@ const Products = () => {
           </Space>
         );
       })}
-      <div>
-        //TODO: borrar lo siguiente:
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est
-          quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis
-          ratione aspernatur assumenda optio? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea
-          qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos?
-          Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est
-          quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis
-          ratione aspernatur assumenda optio? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea
-          qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos?
-          Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est
-          quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis
-          ratione aspernatur assumenda optio? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea
-          qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos?
-          Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est
-          quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis
-          ratione aspernatur assumenda optio? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea
-          qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos?
-          Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est
-          quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis
-          ratione aspernatur assumenda optio?
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est
-          quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis
-          ratione aspernatur assumenda optio? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea
-          qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos?
-          Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est
-          quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis
-          ratione aspernatur assumenda optio? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea
-          qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos?
-          Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est
-          quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis
-          ratione aspernatur assumenda optio? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea
-          qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos?
-          Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est
-          quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis
-          ratione aspernatur assumenda optio? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aliquam corporis, laboriosam quaerat ea
-          qui ducimus vel a! Laboriosam est quibusdam praesentium quam eos?
-          Adipisci repudiandae perspiciatis ratione aspernatur assumenda optio?
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          corporis, laboriosam quaerat ea qui ducimus vel a! Laboriosam est
-          quibusdam praesentium quam eos? Adipisci repudiandae perspiciatis
-          ratione aspernatur assumenda optio?
-        </p>
-      </div>
+        
     </div>
   );
 };

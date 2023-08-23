@@ -31,7 +31,9 @@ const Footer = () => {
           </Col>
           <Col span={4}>
             <h4> About us </h4>
-            <Link to="/Contact" className="footer-link"><p>Contact</p></Link>
+            <Link to="/Contact" className="footer-link">
+              <p>Contact</p>
+            </Link>
           </Col>
           <Col span={4}>
             <h4> Support </h4>
@@ -45,16 +47,19 @@ const Footer = () => {
           <Col span={6}>
             <h4> Follow us </h4>
             <span className="follow-icons">
-              {" "}
-              <InstagramOutlined />{" "}
+              <a href="https://www.instagram.com/" target="_blank">
+                <InstagramOutlined />
+              </a>
             </span>
             <span className="follow-icons">
-              {" "}
-              <FacebookOutlined />{" "}
+              <a href="https://www.facebook.com/" target="_blank">
+                <FacebookOutlined />
+              </a>
             </span>
             <span className="follow-icons">
-              {" "}
-              <TwitterOutlined />{" "}
+              <a href="https://www.twitter.com/" target="_blank">
+                <TwitterOutlined />
+              </a>
             </span>
             {/* <span> {pinterest} </span> */}
           </Col>
@@ -75,4 +80,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
