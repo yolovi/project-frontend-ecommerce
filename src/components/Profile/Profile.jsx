@@ -36,31 +36,25 @@ const GetUserLogged = () => {
             <span>{user.last_name}</span>
           </div>
         </div>
-        <div>
-          <ul className="ul-profile">
-            <li>
-              <button>
-                <span className="">User</span>
-              </button>
-            </li>
-            <li>
-              <button>
-                <span className="">Orders</span>
-              </button>
-            </li>
-            <li>
-              <button>
-                <span className="">Favs</span>
-              </button>
-            </li>
-          </ul>
+        <div className="btn-profile-image">
+          <button>
+            <span className="">User</span>
+          </button>
+
+          <button>
+            <span className="">Orders</span>
+          </button>
+
+          <button>
+            <span className="">Favs</span>
+          </button>
         </div>
       </div>
 
       <div>
         <Space direction="vertical" size={16}>
           <Card size="small" title={user.name_user} style={{ width: 300 }}>
-            <p>Apellido: {user.last_name}</p>
+            <p>Last Name: {user.last_name}</p>
             <p>Email: {user.email}</p>
           </Card>
           <div className="message">General message</div>
