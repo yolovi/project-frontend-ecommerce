@@ -12,9 +12,20 @@
     @extend %message-shared;
     border-color: green;
   }
+
+//----------------------
+
+.container-profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 5%
+
+
+}
   
 
-  //--------------------
+//--------------------
 
   @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 *{
@@ -62,6 +73,7 @@
 }
 .container ul {
   display: flex;
+  justify-content: space-between;
   width: 70%;
   position: absolute;
   top: 75%;
@@ -69,7 +81,6 @@
   transform: translate(-50%, -50%);
   z-index: 3;
   list-style: none;
-  justify-content: space-between;
 }
 
 .ul-profile {
