@@ -19,6 +19,7 @@ const Products = () => {
   return (
     <div className="products-container">
       {products.map((product, i) => {
+        console.log(product)
         //necesitamos el siguiente return para que se muestren los datos que están dentro del div (product.name_product, etc)
         return (
           <Space direction="vertical" size={16} key={i}>
@@ -27,15 +28,6 @@ const Products = () => {
               // hoverable
               size="small"
               key={product.id}
-              // cover={
-              //   <img
-              //     alt="image-lamp"
-              //     src={
-              //       "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg"
-              //     }
-              //   />
-              // }
-              //cover={<img alt="image-lamp" src={product.image_path} />} FIXME: para poder utilizar las imágenes de producto de backend
               cover={<img alt="image-lamp" src={product.image_url} />} // Cargar la imagen usando la URL
               style={{
                 width: 300,
