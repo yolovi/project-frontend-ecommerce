@@ -27,15 +27,16 @@ const Products = () => {
               // hoverable
               size="small"
               key={product.id}
-              cover={
-                <img
-                  alt="image-lamp"
-                  src={
-                    "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg"
-                  }
-                />
-              }
+              // cover={
+              //   <img
+              //     alt="image-lamp"
+              //     src={
+              //       "https://images.pexels.com/photos/1112598/pexels-photo-1112598.jpeg"
+              //     }
+              //   />
+              // }
               //cover={<img alt="image-lamp" src={product.image_path} />} FIXME: para poder utilizar las imágenes de producto de backend
+              cover={<img alt="image-lamp" src={product.image_url} />} // Cargar la imagen usando la URL
               style={{
                 width: 300,
               }}
@@ -57,13 +58,14 @@ const Products = () => {
                   />
                 </button>
 
-                <Link to={`/product/${product.id}`} className="btn-details">Details</Link>
+                <Link to={`/product/${product.id}`} className="btn-details">
+                  Details
+                </Link>
               </div>
             </Card>
           </Space>
         );
       })}
-        
     </div>
   );
 };
