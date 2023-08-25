@@ -84,9 +84,9 @@
 .btn-profile-image {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 80%;
   position: absolute;
-  top: 75%;
+  top: 73%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
@@ -96,6 +96,8 @@
     opacity: 0;
   }
 }
+
+
 
 .container .content {
   position: relative;

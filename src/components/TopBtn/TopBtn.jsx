@@ -30,7 +30,7 @@ const TopBtn = () => {
     <>
       {showButton && (
         <div onClick={scrollToTop}>
-          <button className="btn-top" ><FontAwesomeIcon icon={faChevronUp} /> Up </button>
+          <button className="btn-top" ><FontAwesomeIcon icon={faChevronUp} /><br/> Up </button>
         </div>
       )}
     </>

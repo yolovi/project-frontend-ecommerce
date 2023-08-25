@@ -126,6 +126,15 @@ p {
 
 }
 
+.btn-profile {
+  @extend %btn-black;
+  width: 80px;
+  &::before {
+    width: 80px;
+  }
+
+}
+
 
 .btn {
   &-hover-line {

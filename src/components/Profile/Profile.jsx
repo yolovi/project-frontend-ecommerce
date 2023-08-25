@@ -28,7 +28,7 @@ const GetUserLogged = () => {
     <div className="container-profile">
       <div className="container">
         <div className="image">
-          <img src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"></img>
+          <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
         </div>
         <div className="content">
           <div className="info">
@@ -38,15 +38,15 @@ const GetUserLogged = () => {
         </div>
         <div className="btn-profile-image">
           <button>
-            <span className="">User</span>
+            <span className="btn-profile">User</span>
           </button>
 
           <button>
-            <span className="">Orders</span>
+            <span className="btn-profile">Orders</span>
           </button>
 
           <button>
-            <span className="">Favs</span>
+            <span className="btn-profile">Favs</span>
           </button>
         </div>
       </div>

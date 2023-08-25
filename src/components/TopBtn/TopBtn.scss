@@ -4,12 +4,12 @@
 
 .btn-top {
   color: $complementary-dark-color;
-  //background-color: $primary-color;
+  background-color: $primary-color;
   width: 40px;
   height: 60px;
   text-align: center;
   border-radius: 12px;
-  border-color: $complementary-dark-color;
+  border: 1px solid $complementary-dark-color ;
   position: fixed;
   bottom: 30px;
   right: 30px;
