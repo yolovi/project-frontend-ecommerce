@@ -78,7 +78,7 @@ p {
   font-weight: 600;
   gap: 8px;
   cursor: pointer;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
   position: relative;
   overflow: hidden;
   transition-duration: 0.3s;
@@ -129,6 +129,8 @@ p {
 
 .btn {
   &-hover-line {
+    font-size: medium;
+    font-weight: 100;
     background: transparent;
     border: none;
     padding: 1em 1.5em;
