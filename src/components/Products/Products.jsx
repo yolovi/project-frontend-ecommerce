@@ -41,7 +41,7 @@ const Products = () => {
               {/* para que no se ejecute autom. la función de addCart y se convierte en un bucle, hay que meterla dentro de una función, para que se ejecute solo al clicar */}
               {/* <button onClick={() => addCart(product)}>Add Cart</button> */}
               <div className="btn-link-container">
-                <button className="btn-card" onClick={() => addCart(product)}>
+                <button className="btn-black" onClick={() => addCart(product)}>
                   Add{" "}
                   <ShoppingCartOutlined
                     style={{

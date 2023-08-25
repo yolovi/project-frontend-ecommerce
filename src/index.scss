@@ -65,19 +65,65 @@ p {
   margin-inline-end: 0px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+%btn-black {
+  width: 110px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(15, 15, 15);
+  border: none;
+  border-radius: 0%;
+  color: $primary-color;
+  font-weight: 600;
+  gap: 8px;
   cursor: pointer;
-  transition: border-color 0.25s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+
+  &::before {
+    width: 110px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: $primary-color;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: 0.3s;
+    mix-blend-mode: difference;
+  }
+
+  &:hover::before {
+    transition-duration: 0.3s;
+    transform: translate(100%, -50%);
+    border-radius: 0;
+  }
+
+  &:hover {
+    color: $primary-color;
+    background-color: rgb(20, 20, 20);
+  }
+
+  &:active {
+    transform: translate(5px, 5px);
+    transition-duration: 0.3s;
+  }
 }
-button:hover {
-  border-color: $complementary-color;
+
+.btn-black {
+  @extend %btn-black;
+}
+
+.btn-details {
+  @extend %btn-black;
+  width: 80px;
+  &::before {
+    width: 80px;
+  }
+
 }
 
 

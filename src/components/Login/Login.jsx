@@ -1,107 +1,98 @@
-import React, { useContext } from 'react';
-import { Button, Checkbox, Form, Input, notification } from 'antd';
-import { UserContext } from '../../context/UserContext/UserState';
-import { useNavigate } from 'react-router-dom';
-import "./Login.scss"
+import React, { useContext, useState } from "react";
+import { Button, Checkbox, Form, Input, notification } from "antd";
+import { UserContext } from "../../context/UserContext/UserState";
+import { Link, useNavigate } from "react-router-dom";
+import "./Login.scss";
 
 const Login = () => {
   const { login } = useContext(UserContext);
-  const navigate = useNavigate()
-    const onFinish = (values) => {
-        //console.log('Success:', values);
-        login(values);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+
+    if (!email || !password) {
+      notification.error({
+        message: "Login Failed",
+        description: "Please fill in both email and password fields.",
+      });
+    } else {
+      try {
+        await login({ email, password }); // Call the login function from context
         notification.success({
-          message: 'Successfully logged',
-          description:
-            'Welcome to our e-commerce',
+          message: "Successfully logged",
+          description: "Welcome to our e-commerce",
         });
-        setTimeout(() => { //setTimeout para que le de tiempo a procesar la información
-          navigate("/profile") 
-        }, 3000); 
-      };
-      
-      const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
+        setTimeout(() => {
+          //setTimeout para que le de tiempo a procesar la información
+          navigate("/profile");
+        }, 3000);
+      } catch (error) {
+        notification.error({
+          message: "Login Failed",
+          description: "Invalid email or password.",
+        });
+      }
+    }
+  };
 
-    return (
-      <div className='form-container'>
-        <Form
-    name="basic"
-    labelCol={{
-      span: 8,
-    }}
-    wrapperCol={{
-      span: 16,
-    }}
-    style={{
-      maxWidth: 600,
-    }}
-    initialValues={{
-      remember: true,
-    }}
-    onFinish={onFinish}
-    onFinishFailed={onFinishFailed}
-    autoComplete="off"
-  >
-    <Form.Item
-      label="Email"
-      name="email"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your email!',
-        },
-        {
-          type: "email", //validación tipo email
-          message: 'Please input a correct email!',
-        },
-        //TODO: incluir una validación que muestre que el email sea único como está en backend, sino habrá un error 400 en consola
-      ]}
-    >
-      <Input />
-    </Form.Item>
+  const [isChecked, setIsChecked] = useState(true);
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
 
-    <Form.Item
-      label="Password"
-      name="password"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your password!',
-        },
-      ]}
-    >
-      <Input.Password />
-    </Form.Item>
+  return (
+    <>
+      <div className="container-form">
+        <div className="card">
+          <h2 >Log in</h2>
 
-    <Form.Item
-      name="remember"
-      valuePropName="checked"
-      wrapperCol={{
-        offset: 8,
-        span: 16,
-      }}
-    >
-      <Checkbox>Remember me</Checkbox>
-    </Form.Item>
+          <form onSubmit={handleSubmit} className="form">
+            <div className="inputBox">
+              <input
+                type="text"
+                name="email"
+                required
+                placeholder="Insert your "
+              />
+              <span className="user">Email</span>
+            </div>
+            <div className="inputBox">
+              <input
+                type="password"
+                name="password"
+                required
+                placeholder="Insert your "
+              />
+              <span>Password</span>
+            </div>
+            <label>
+              <input
+                type="checkbox"
+                checked={isChecked}
+                onChange={handleCheckboxChange}
+              />
+              Remember me
+            </label>
+            <button className="btn-black" type="submit">
+              Enter
+            </button>
+            <div class="con">
+              <p>don't have account? </p>
+              <Link to="/register" className="a">
+              sign in
+            </Link>
+            </div>
+          </form>
+        </div>
+      </div>
+    </>
+  );
+};
 
-    <Form.Item
-      wrapperCol={{
-        offset: 8,
-        span: 16,
-      }}
-    >
-      <Button type="primary" htmlType="submit">
-        Submit
-      </Button>
-    </Form.Item>
-  </Form>
-    </div>
-    )
-  }
+//------
 
-
-
-
-export default Login
+export default Login;
