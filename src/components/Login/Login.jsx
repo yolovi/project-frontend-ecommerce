@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Button, Checkbox, Form, Input, notification } from "antd";
+import { notification } from "antd";
 import { UserContext } from "../../context/UserContext/UserState";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.scss";
@@ -48,7 +48,7 @@ const Login = () => {
     <>
       <div className="container-form">
         <div className="card">
-          <h2 >Log in</h2>
+          <h2>Log in</h2>
 
           <form onSubmit={handleSubmit} className="form">
             <div className="inputBox">
@@ -80,11 +80,11 @@ const Login = () => {
             <button className="btn-black" type="submit">
               Enter
             </button>
-            <div class="con">
-              <p>don't have account? </p>
+            <div className="con">
+              <p>Don't have an account? </p>
               <Link to="/register" className="a">
-              sign in
-            </Link>
+                sign in
+              </Link>
             </div>
           </form>
         </div>

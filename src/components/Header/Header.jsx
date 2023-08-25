@@ -4,6 +4,7 @@ import { UserContext } from "../../context/UserContext/UserState";
 import {
   UserDeleteOutlined,
   UserOutlined,
+  UserAddOutlined,
   ShoppingCartOutlined,
   CloseOutlined,
   MenuFoldOutlined,
@@ -130,14 +131,14 @@ const Header = () => {
                       className="btn-hover-line"
                     >
                       {" "}
-                      Login{" "}
+                      Login{" "}<UserOutlined />
                     </Link>
                     <Link
                       to="/register"
                       onClick={closeMenu}
                       className="btn-hover-line"
                     >
-                      Register <UserOutlined />
+                      Register <UserAddOutlined />
                     </Link>
                   </div>
                 )}

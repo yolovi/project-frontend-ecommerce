@@ -27,11 +27,11 @@ const GetUserLogged = () => {
   return (
     <div className="container-profile">
       <div className="container">
-        <div class="image">
+        <div className="image">
           <img src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"></img>
         </div>
-        <div class="content">
-          <div class="info">
+        <div className="content">
+          <div className="info">
             <h2>{user.name_user}</h2>
             <span>{user.last_name}</span>
           </div>

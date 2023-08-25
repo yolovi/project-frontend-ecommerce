@@ -19,11 +19,11 @@ export const UserProvider = ({ children }) => {
   const register = async (user) => {
     const res = await axios.post(API_URL + "/users", user);//url de la api y la ruta que pusimos en backend, user: el que se conecta en frontend por form
     console.log(res) 
-    if(res.data.user.id) {
-      message.success("user created succesfully")
-    } else {
-      message.error("Error creating user")
-    }
+    // if(res.data.user.id) {
+    //   message.success("user created succesfully")
+    // } else {
+    //   message.error("Error creating user")
+    // }
   };
   const login = async (user) => {
     const res = await axios.post(API_URL + "/users/login", user); 
