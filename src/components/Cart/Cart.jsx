@@ -40,9 +40,9 @@ const Cart = () => {
         size="small"
         header={<div>Products</div>}
         footer={
-          <div>
-            <button onClick={() => clearCart()}>Clear cart</button>
-            <button onClick={checkout}>Checkout</button>
+          <div className="btn-link-container" >
+            <button className="btn-black" onClick={() => clearCart()}>Clear cart</button>
+            <button className="btn-black" onClick={checkout}>Checkout</button>
           </div>
         }
         bordered
