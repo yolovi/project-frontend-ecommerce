@@ -40,7 +40,8 @@ function ProductDetail() {
           <div className="card-detail">
             <div className="product-detail">
               <h2>{product.name_product}</h2>
-              <h5>Category: {product.CategoryId}</h5> //FIXME: category name no
+              {/* //FIXME: category name no //description={product.Category.name_category} */}
+              <h5>Category: {product.CategoryId}</h5>
               id
               <h3>Description</h3>
               <p>
@@ -51,14 +52,15 @@ function ProductDetail() {
               </p>
             </div>
             <div className="product-detail">
-              <p>Quantity</p>
               <p>{product.price} €</p>
+              <p>Quantity + -</p>
             </div>
             <div className="div-btn">
-              <button className="btn-black">ADD TO CART</button>
-              <button className="btn-wish">
+              {/* para que no se ejecute autom. la función de addCart y se convierte en un bucle, hay que meterla dentro de una función, para que se ejecute solo al clicar */}
+              <button className="btn-black" onClick={() => addCart(product)}>ADD TO CART</button>
+              <button className="btn-wish" onClick={() => alert("do the function add favs")}>
                 ADD TO WISHLIST <HeartOutlined className="heart" />
-                 {/* <HeartFilled className="heart"/> */}
+                {/* <HeartFilled className="heart"/> */}
               </button>
             </div>
           </div>
