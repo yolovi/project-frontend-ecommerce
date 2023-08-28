@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./TopBtn.scss";
+import "./BtnTop.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
-const TopBtn = () => {
+const BtnTop = () => {
   // const iconAwsome = <FontAwesomeIcon icon={faChevronUp} />;
   const [showButton, setShowButton] = useState(false);
 
@@ -37,4 +37,4 @@ const TopBtn = () => {
   );
 };
 
-export default TopBtn;
+export default BtnTop;

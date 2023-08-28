@@ -12,7 +12,7 @@ import {
 import { Badge } from "antd";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import "./Header.scss";
-import TopBtn from "../TopBtn/TopBtn";
+import BtnTop from "../assets/BtnTop/BtnTop";
 
 //prueba6@example.com // para hacer las pruebas la password es pass
 
@@ -163,7 +163,7 @@ const Header = () => {
             )}
           </div>
         </div>
-        <TopBtn />
+        <BtnTop />
       </header>
     </>
   );

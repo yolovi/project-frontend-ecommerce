@@ -6,6 +6,7 @@ import axios from "axios";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 //import Meta from "antd/es/card/Meta";
 import "./ProductDetail.scss";
+import { LeftOutlined, HeartOutlined, HeartFilled } from "@ant-design/icons";
 
 const API_URL = "http://localhost:3000";
 
@@ -29,7 +30,7 @@ function ProductDetail() {
     <>
       <div className="card-product-col">
         <div className="nav-back">
-          <button>icono back</button>
+          <LeftOutlined />
           <a>Back to products</a>
         </div>
         <div className="card-content-row">
@@ -39,7 +40,8 @@ function ProductDetail() {
           <div className="card-detail">
             <div className="product-detail">
               <h2>{product.name_product}</h2>
-              <h5>Category: {product.CategoryId}</h5> //FIXME: category name no id
+              <h5>Category: {product.CategoryId}</h5> //FIXME: category name no
+              id
               <h3>Description</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -54,7 +56,10 @@ function ProductDetail() {
             </div>
             <div className="div-btn">
               <button className="btn-black">ADD TO CART</button>
-              <button>ADD TO WISHLIST</button>
+              <button className="btn-wish">
+                ADD TO WISHLIST <HeartOutlined className="heart" />
+                 {/* <HeartFilled className="heart"/> */}
+              </button>
             </div>
           </div>
         </div>

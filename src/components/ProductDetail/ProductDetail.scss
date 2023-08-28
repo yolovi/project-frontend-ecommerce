@@ -41,31 +41,31 @@
 .card-detail {
   @extend %card-product;
   justify-content: initial;
-  gap: 20px
+  gap: 20px;
 }
 
 .card-content-row {
-  @extend %card-product ;
+  @extend %card-product;
   flex-direction: row;
 }
 
 .nav-back {
   display: flex;
-  border: 1px solid #555555;
+  align-items: center;
+  border-bottom: 1px solid #555555;
   padding: 5px;
   gap: 25px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   width: 100%;
 }
 
 .image-detail {
- max-width: 500px;
- border: 1px solid #555555;
+  max-width: 500px;
+  border: 1px solid #555555;
 
- & img {
-  width: 100%;
- }
-
+  & img {
+    width: 100%;
+  }
 }
 
 .product-detail {
@@ -77,15 +77,25 @@
   border: 1px solid #555555;
   max-width: 500px;
   padding: 5px;
- 
- }
-
-
+}
 
 .div-btn {
   display: flex;
   gap: 15px;
   border: 1px solid #555555;
-  width: 300px;
+  width: 500px;
   padding: 5px;
+}
+
+.btn-wish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  gap: 15px;
+  border: 1px dashed #555555;
+}
+
+.heart {
+  font-size: 20px;
 }
