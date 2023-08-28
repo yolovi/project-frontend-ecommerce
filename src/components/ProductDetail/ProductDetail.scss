@@ -1,23 +1,91 @@
+@import "../../colors.scss";
 
-Meta {
-    font-size: 24px,
+// .container-product-detail {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: flex-start;
+//     gap: 10px;
+//     padding: 10px;
+
+// }
+
+// .image-detail img {
+//     width: 100%;
+// }
+
+// .product-detail {
+//     /* Agrega estilos adicionales según sea necesario */
+//   }
+
+//---------------------------------------------
+
+%card-product {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: initial;
+  min-height: 350px;
+  //width: 300px;
+  //gap: 35px;
+  border: 1px solid #555555;
+  border-radius: 5px;
 }
 
-.container-product-detail {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px;
-   
+.card-product-col {
+  @extend %card-product;
 }
 
-.image-detail img {
-    width: 100%;
+.card-detail {
+  @extend %card-product;
+  justify-content: initial;
+  gap: 20px
 }
 
+.card-content-row {
+  @extend %card-product ;
+  flex-direction: row;
+}
 
+.nav-back {
+  display: flex;
+  border: 1px solid #555555;
+  padding: 5px;
+  gap: 25px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.image-detail {
+ max-width: 500px;
+ border: 1px solid #555555;
+
+ & img {
+  width: 100%;
+ }
+
+}
 
 .product-detail {
-    /* Agrega estilos adicionales según sea necesario */
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  text-align: initial;
+  border: 1px solid #555555;
+  max-width: 500px;
+  padding: 5px;
+ 
+ }
+
+
+
+.div-btn {
+  display: flex;
+  gap: 15px;
+  border: 1px solid #555555;
+  width: 300px;
+  padding: 5px;
+}
