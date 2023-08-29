@@ -1,5 +1,5 @@
 //variables -------------------------------------
-@import "../../colors.scss";
+@import "../../variables.scss";
 
 //scss -----------------------------------------
 
@@ -11,9 +11,6 @@ label input {
   margin-right: 5px;
 }
 
-h2 {
-  letter-spacing: 2px;
-}
 
 .container-form {
   display: flex;
@@ -29,7 +26,7 @@ h2 {
 }
 
 .login {
-  color: #000;
+  color: $secondary-color;
   text-transform: uppercase;
   letter-spacing: 2px;
   display: block;
@@ -48,7 +45,8 @@ h2 {
   width: 300px;
   flex-direction: column;
   gap: 35px;
-  border: 1px solid #c6d2c6;
+  border: 1px solid $gray-color;
+
 }
 
 .inputBox {
@@ -62,24 +60,25 @@ h2 {
   padding: 10px;
   outline: none;
   border: none;
-  color: #000;
+  color: $secondary-color;
   font-size: 1em;
   background: transparent;
-  border-left: 2px solid #000;
-  border-bottom: 2px solid #000;
+  border-left: 1px solid $secondary-color;
+  border-bottom: 1px solid $secondary-color;
   transition: 0.1s;
 }
 
 .inputBox span {
-  margin-top: 8px;
+  margin-top: 3px;
   position: absolute;
   left: 100px;
   transform: translateY(-4px);
   margin-left: 10px;
   padding: 10px;
   pointer-events: none;
-  font-size: 12px;
-  color: #000;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: $secondary-color;
   text-transform: uppercase;
   transition: 0.5s;
   letter-spacing: 3px;
@@ -91,15 +90,15 @@ h2 {
   transform: translateX(113px) translateY(-15px);
   font-size: 0.8em;
   padding: 5px 10px;
-  background: #000;
+  background: $secondary-color;
   letter-spacing: 0.2em;
-  color: #fff;
+  color: $primary-color;
   border: 2px;
 }
 
 .inputBox input:valid,
 .inputBox input:focus {
-  border: 2px solid #000;
+  border: 2px solid $secondary-color;
 }
 
 .con {
@@ -107,9 +106,9 @@ h2 {
   justify-content: flex-start;
   width: 100%;
   margin-top: 30px;
-  color: rgb(111, 103, 103);
+  color: $gray-dark-color;
   font-size: 13px;
-  font-family: sans-serif;
+ font-family: sans-serif;
   background-color: rgba(255, 0, 0, 0);
 }
 

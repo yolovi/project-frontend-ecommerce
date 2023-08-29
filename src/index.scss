@@ -1,13 +1,13 @@
-@import "./colors.scss";
+@import "./variables.scss";
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: $primary-font;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: $primary-color;
+  background-color: $black-light-color;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,6 +22,19 @@
   box-sizing: border-box;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    color: $secondary-color;
+    background-color: $primary-color;
+  }
+  a:hover {
+    color: $complementary-color;
+  }
+  // button {
+  //   background-color: #f9f9f9;
+  // }
+}
+
 @media (max-width: 768px) {
   .btn {
     &-hover-line {
@@ -31,8 +44,8 @@
       color: $primary-color;
       position: relative;
       transition: 0.5s ease;
-    }}
-  
+    }
+  }
 }
 
 a {
@@ -65,6 +78,17 @@ p {
   margin-inline-end: 0px;
 }
 
+//---------------------
+
+.title {
+  letter-spacing: 2px;
+  font-family: $secondary-font;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+// BUTTON -------------------------------
+
 %btn-black {
   width: 110px;
   height: 40px;
@@ -75,10 +99,13 @@ p {
   border: none;
   border-radius: 0%;
   color: $primary-color;
-  font-weight: 600;
+  font-family: $secondary-font;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   gap: 8px;
   cursor: pointer;
- box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
   position: relative;
   overflow: hidden;
   transition-duration: 0.3s;
@@ -104,7 +131,7 @@ p {
 
   &:hover {
     color: $primary-color;
-    background-color: rgb(20, 20, 20);
+    background-color: $black-light-color;
   }
 
   &:active {
@@ -123,7 +150,6 @@ p {
   &::before {
     width: 80px;
   }
-
 }
 
 .btn-profile {
@@ -132,18 +158,15 @@ p {
   &::before {
     width: 80px;
   }
-
 }
-
 
 .btn {
   &-hover-line {
     font-size: medium;
-    font-weight: 100;
+    font-weight: 600;
     background: transparent;
     border: none;
     padding: 1em 1.5em;
-    //color: $primary-color;
     position: relative;
     transition: 0.5s ease;
   }
@@ -164,19 +187,6 @@ p {
   }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: $secondary-color;
-    background-color: $primary-color;
-  }
-  a:hover {
-    color: $complementary-color;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 /* -------- */
 .avatar {
   width: 40px;
@@ -185,11 +195,4 @@ p {
   border: none;
   object-fit: cover;
   margin-right: 10px;
-}
-.github-icon {
-  font-size: 1.5em;
-  transition: 0.3s ease-in-out;
-}
-.github-icon:hover {
-  scale: 1.1;
 }

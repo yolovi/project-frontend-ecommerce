@@ -1,6 +1,4 @@
-@import "../../../colors.scss";
-
-
+@import "../../../variables.scss";
 
 .btn-top {
   color: $complementary-dark-color;
@@ -23,9 +21,9 @@
     cursor: pointer;
   }
 
-  &::after {
-    // content: "\f077";
-    // font-family: "Font Awesome 5 Free";
+  // &::after {
+  //   // content: "\f077";
+  //   // font-family: "Font Awesome 5 Free";
 
-  }
+  // }
 }
