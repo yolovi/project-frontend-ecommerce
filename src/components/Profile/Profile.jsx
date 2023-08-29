@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
-import { LoadingOutlined, GitlabOutlined } from "@ant-design/icons";
+import { LoadingOutlined } from "@ant-design/icons";
 import { Spin, Space, Card } from "antd";
 import "./Profile.scss";
 
@@ -32,21 +32,19 @@ const GetUserLogged = () => {
         </div>
         <div className="content">
           <div className="info">
-            <h2>{user.name_user}</h2>
+            <h2 className="title">{user.name_user}</h2>
             <span>{user.last_name}</span>
           </div>
         </div>
         <div className="btn-profile-image">
-          <button>
-            <span className="btn-profile">User</span>
+          <button className="btn-profile">
+            <span>User</span>
           </button>
-
-          <button>
-            <span className="btn-profile">Orders</span>
+          <button className="btn-profile">
+            <span>Orders</span>
           </button>
-
-          <button>
-            <span className="btn-profile">Favs</span>
+          <button className="btn-profile">
+            <span>Favs</span>
           </button>
         </div>
       </div>

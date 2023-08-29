@@ -48,7 +48,7 @@ const Login = () => {
     <>
       <div className="container-form">
         <div className="card">
-          <h2>Log in</h2>
+          <h2 className="title">Log in</h2>
 
           <form onSubmit={handleSubmit} className="form">
             <div className="inputBox">
