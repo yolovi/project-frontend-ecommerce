@@ -46,6 +46,17 @@ const Contact = () => {
             />
           </div>
 
+          <div className="orderNumber contact">
+            <label htmlFor="orderNumber"></label>
+            <input className="contact"
+              type="text"
+              placeholder="Order number"
+              name="orderNumber"
+              id="orderNumber"
+              required
+            />
+          </div>
+
           <div className="subject contact">
             <label htmlFor="subject"></label>
             <select className="contact"
@@ -65,16 +76,6 @@ const Contact = () => {
             </select>
           </div>
 
-          <div className="orderNumber contact">
-            <label htmlFor="orderNumber"></label>
-            <input className="contact"
-              type="text"
-              placeholder="Order number"
-              name="orderNumber"
-              id="orderNumber"
-              required
-            />
-          </div>
           <div className="msg-contact contact">
             <label htmlFor="message"></label>
             <textarea className="contact"
@@ -88,9 +89,8 @@ const Contact = () => {
             <h3>Please provide all the information about your issue you can.</h3> 
           </div>
           {/* //FIXME: aplicar estilo btn-black*/}
-          <div className="btn-black"> 
-            <input type="submit" value="Send Message" id="form_button" />
-          </div>
+
+          <button className="btn-black" type="submit" form="contact" value="Send">Send</button>
         </form>
       </div>
     </div>
