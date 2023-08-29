@@ -52,6 +52,16 @@
     position: relative;
     z-index: 100;
 
+    &-toggle :hover{
+        color:$secondary-color
+    }
+
+    
+
+    // a:hover {
+    //   color: $complementary-color;
+    // }
+
     &-logo {
       font-family: "Smooch Sans", Geneva, sans-serif;
       font-size: 3rem;
