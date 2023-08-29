@@ -53,7 +53,6 @@ const Contact = () => {
               placeholder="Order number"
               name="orderNumber"
               id="orderNumber"
-              required
             />
           </div>
 

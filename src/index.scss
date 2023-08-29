@@ -1,6 +1,11 @@
 @import "./variables.scss";
 
 :root {
+
+  grid-template-rows: unset;
+  align-content: space-between;
+  align-items: start;
+
   font-family: $primary-font;
   line-height: 1.5;
   font-weight: 400;
