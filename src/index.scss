@@ -87,8 +87,9 @@ p {
   text-transform: uppercase;
 }
 
-// BUTTON -------------------------------
+// BUTTONS -------------------------------
 
+//Black button
 %btn-black {
   width: 110px;
   height: 40px;
@@ -152,6 +153,8 @@ p {
   }
 }
 
+//Profile button
+
 .btn-profile {
   @extend %btn-black;
   width: 80px;
@@ -159,6 +162,8 @@ p {
     width: 80px;
   }
 }
+
+//Hover line button
 
 .btn {
   &-hover-line {

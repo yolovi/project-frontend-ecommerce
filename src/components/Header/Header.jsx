@@ -116,12 +116,14 @@ const Header = () => {
                         />{" "}
                       </Badge>
                     </Link>
-                    <button
+                    <Link
+                      to="/login"
                       onClick={logoutUser}
-                      className="btn-hover-line logout"
+                      className="btn-hover-line"
                     >
-                      Logout <UserDeleteOutlined />
-                    </button>
+                      {" "}
+                      Logout <UserDeleteOutlined />{" "}
+                    </Link>
                   </div>
                 ) : (
                   <div className="header-menu">
