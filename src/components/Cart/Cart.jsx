@@ -1,75 +1,161 @@
-import React, { useContext } from "react";
+import { useContext, useState } from "react";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-import { Divider, List, message } from "antd";
+import { List, message } from "antd";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import "./Cart.scss";
 const API_URL = "http://localhost:3000";
 
 const Cart = () => {
   const { cart, clearCart } = useContext(ProductsContext);
-  const data = cart.map((product) => product.name_product);
   const navigate = useNavigate();
 
-  // console.log(cart)
+  const [productsMap, setProductsMap] = useState(new Map());
 
-  const checkout = async () => {
-    const token = JSON.parse(localStorage.getItem("token")); //para dar acceso al usuario autenticado(si en la ruta backend lo solicita): recogemos token de usuario loggeado y se lo pasamos por headers al authoritation
-  
+   const checkout = async () => {
+     const token = JSON.parse(localStorage.getItem("token")); //para dar acceso al usuario autenticado(si en la ruta backend lo solicita): recogemos token de usuario loggeado y se lo pasamos por headers al authoritation
+
     await axios.post(
       API_URL + "/orders",
       { ProductId: cart.map((product) => product.id) },
       { headers: { authorization: token } }
     );
+
     message.success("Order created succesfully");
     setTimeout(() => {
       //setTimeout para que le de tiempo a procesar la información
       navigate("/profile");
     }, 3000);
     clearCart();
+
+    setProductsMap(new Map());
   };
 
-  if (cart.length <= 0) {
-    return <span>No tienes ningún producto añadido</span>;
+  const handleIncrement = (productId) => {
+    const updatedMap = new Map(productsMap);
+    if (updatedMap.has(productId)) {
+      updatedMap.set(productId, updatedMap.get(productId) + 1);
+    } else {
+      updatedMap.set(productId, 1);
+    }
+    setProductsMap(updatedMap);
+  };
+
+  const handleDecrement = (productId) => {
+    const updatedMap = new Map(productsMap);
+    if (updatedMap.has(productId)) {
+      const qty = updatedMap.get(productId);
+      if (qty > 1) {
+        updatedMap.set(productId, qty - 1);
+      } else {
+        updatedMap.delete(productId);
+      }
+      setProductsMap(updatedMap);
+    }
+  };
+
+  if (cart.length === 0) {
+    return (
+      <div className="cart-empty">
+        <div>
+          <p>Your cart is</p>
+          <Link className="btn-cart" to={"/"}>
+            {" "}
+            Start Shoping!{" "}
+          </Link>
+        </div>
+      </div>
+    );
   }
 
+  const productList = cart.map((product) => ({
+    id: product.id,
+    title: product.name_product,
+    price: product.price,
+    image: product.image_path,
+  }));
+
   return (
-    <div>
-      <Divider orientation="left">Cart</Divider>
-      <List
-        size="small"
-        header={<div>Products</div>}
-        footer={
-          <div className="btn-link-container" >
-            <button className="btn-black" onClick={() => clearCart()}>Clear cart</button>
-            <button className="btn-black" onClick={checkout}>Checkout</button>
-          </div>
-        }
-        bordered
-        dataSource={data}
-        renderItem={(item) => <List.Item>{item}</List.Item>}
-      />
+    <div className="container-flex">
+      <div className="container-cart">
+        <List
+          size="small"
+          header={<h2 className="title">Cart</h2>}
+          footer={
+            <div className="btn-link-container">
+              <button className="btn-black" onClick={() => clearCart()}>
+                Clear
+              </button>
+              <button className="btn-cart" onClick={checkout}>
+                Checkout
+              </button>
+            </div>
+          }
+          bordered
+          dataSource={productList} // Cambia esto a un array de objetos
+          renderItem={(item) => (
+            <div className="cart-table-flex">
+              <table key={item.id}>
+                <tbody>
+                  {/* Encabezado de la fila */}
+                  <tr>
+                    <td colSpan="3" className="table-header">
+                      <h4>{item.title}</h4>
+                    </td>
+                  </tr>
+                  {/* Filas de detalles */}
+                  <tr>
+                    <td>Amount: {productsMap.get(item.id) || 1}</td>
+                    <td>
+                      <button onClick={() => handleDecrement(item.id)}>-</button>
+                      <span>{productsMap.get(item.id) || 0}</span>
+                      <button onClick={() => handleIncrement(item.id)}>+</button>
+                    </td>
+                    <td> {item.price.toFixed(2)} €</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          )}
+        />
+      </div>
     </div>
   );
 };
 
 export default Cart;
 
-// // Estructura de datos para el carrito. Para poder añadir cantides del mismo producto
-// const cart = [];
+//ESTRUCTURA CART
+// return (
+// <div className="container-flex">
+// <div className="cart-container">
+//   <div className="container-item">
+//     <img />
+//     <div className="item">
+//       <div className="item-info">
+//         <p>LOGO</p>
+//         <h4>Name product</h4>
+//       </div>
+//       <div className="item-price">
+//         indiviudal price €
+//       </div>
+//       <div className="item-quantity">
+//         <button>+ / -</button>
+//         <span>Remove button</span>
+//       </div>
+//     </div>
+//     <div className="price-total-item">
+//       <h3>Total item €</h3>
+//     </div>
+//   </div>
+//   <div className="checkout-container">
+//     <div className="clear-container">
+//     <button>CLEAR</button>
+//     <span>icono + nº items</span>
+//     </div>
+//     <button>checkout · total precio €</button>
 
-// // Función para agregar productos al carrito
-// const addToCart = (productId, quantity) => {
-//   const existingProduct = cart.find((product) => product.id === productId);
-
-//   if (existingProduct) {
-//     existingProduct.quantity += quantity;
-//   } else {
-//     cart.push({ id: productId, quantity });
-//   }
-// };
-
-// // Cuando se realiza el pedido, envía la estructura de datos con IDs y cantidades
-// const placeOrder = async () => {
-//   // Lógica para enviar la estructura de datos al backend
-// };
+//   </div>
+// </div>
+// </div>
+// )

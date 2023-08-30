@@ -146,11 +146,14 @@ p {
   }
 }
 
+//extend btn-black
+
 .btn-black {
   @extend %btn-black;
 }
 
-.btn-details {
+
+.btn-profile {
   @extend %btn-black;
   width: 80px;
   &::before {
@@ -158,13 +161,25 @@ p {
   }
 }
 
-//Profile button
-
-.btn-profile {
+.btn-details {
   @extend %btn-black;
-  width: 80px;
+
+}
+
+.btn-cart {
+  @extend %btn-black;
+  width: 200px;
   &::before {
-    width: 80px;
+    width: 200px;
+  }
+}
+
+
+.btn-large {
+  @extend %btn-black;
+  width: 140px;
+  &::before {
+    width: 140px;
   }
 }
 
@@ -197,12 +212,4 @@ p {
   }
 }
 
-/* -------- */
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  object-fit: cover;
-  margin-right: 10px;
-}
+

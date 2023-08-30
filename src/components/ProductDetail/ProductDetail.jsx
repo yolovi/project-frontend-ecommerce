@@ -58,7 +58,7 @@ function ProductDetail() {
             </div>
             <div className="div-btn">
               {/* para que no se ejecute autom. la función de addCart y se convierte en un bucle, hay que meterla dentro de una función, para que se ejecute solo al clicar */}
-              <button className="btn-black" onClick={() => addCart(product)}>ADD TO CART</button>
+              <button className="btn-large" onClick={() => addCart(product)}>ADD TO CART</button>
               <button className="btn-wish" onClick={() => alert("do the function add favs")}>
                 ADD TO WISHLIST <HeartOutlined className="heart" />
                 {/* <HeartFilled className="heart"/> */}

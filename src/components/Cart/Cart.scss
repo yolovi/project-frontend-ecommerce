@@ -1,8 +1,92 @@
-.container-btn-cart{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 8px;
-    margin-bottom: 8px;
- 
+
+
+td {
+  padding: 12px 15px;
+  background-color: #f4f4f4;
+  color: black;
+}
+
+
+.container-btn-cart {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.cart {
+  min-width: 600px;
+}
+
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cart-table-flex {
+  display: flex;
+  /* justify-content: space-around; */
+  /* align-items: center; */
+  margin-top: 8px;
+  margin-bottom: 8px;
+  flex-direction: column;
+}
+
+//-------------------------------
+
+.container-cart {
+  //border: 2px solid blue;
+  margin: 4px;
+  min-width: 600px;
+}
+
+.container-item {
+  border: 2px solid rgb(224, 78, 46);
+  margin: 4px;
+
+  display: flex;
+}
+
+.container-img {
+  border: 2px dashed rgb(156, 13, 106);
+  margin: 4px;
+}
+
+.item {
+  border: 2px dashed rgb(156, 13, 106);
+  margin: 4px;
+}
+
+.item-info {
+  border: 2px dashed rgb(13, 156, 30);
+  margin: 4px;
+}
+
+.item-price {
+  border: 2px dashed rgb(13, 156, 30);
+  margin: 4px;
+}
+
+.item-quantity {
+  border: 2px dashed rgb(13, 156, 30);
+  margin: 4px;
+}
+
+.price-total-item {
+  border: 2px dashed rgb(156, 13, 106);
+  margin: 4px;
+}
+
+.container-checkout {
+  border: 2px solid rgb(224, 78, 46);
+  margin: 4px;
+}
+
+.container-clear {
+  border: 2px dashed rgb(156, 13, 106);
+  margin: 4px;
 }
