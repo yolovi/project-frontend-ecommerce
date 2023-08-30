@@ -8,6 +8,12 @@
   overflow: auto;
 }
 
+.container-flex {
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 #container-contact {
   max-width: 600px;
   margin: 60px auto;

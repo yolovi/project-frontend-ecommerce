@@ -10,7 +10,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className="container-flex">
       <div id="container-contact">
         <h2 className="title"> Keep in Touch </h2>
         <div className="underline"></div>

@@ -2,9 +2,9 @@
 
 :root {
 
-  grid-template-rows: unset;
-  align-content: space-between;
-  align-items: start;
+  // grid-template-rows: unset;
+  // align-content: space-between;
+  // align-items: start;
 
   font-family: $primary-font;
   line-height: 1.5;
@@ -62,13 +62,13 @@ a:hover {
   color: $complementary-color;
 }
 
-body {
-  margin: 0;
-  //display: flex;
-  //place-items: column;
-  min-width: 320px;
-  min-height: 100vh;
-}
+// body {
+//   margin: 0;
+//   //display: flex;
+//   //place-items: column;
+//   min-width: 320px;
+//   min-height: 100vh;
+// }
 
 h1 {
   font-size: 3.2em;

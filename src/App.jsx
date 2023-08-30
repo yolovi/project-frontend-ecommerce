@@ -11,6 +11,7 @@ import Header from "./components/Header/Header";
 import Cart from "./components/Cart/Cart";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
+import Prueba from "./components/Prueba/Prueba";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/profile" element={<GetUserLogged />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/prueba" element={<Prueba />} />
             </Routes>
             <Footer />
           </BrowserRouter>

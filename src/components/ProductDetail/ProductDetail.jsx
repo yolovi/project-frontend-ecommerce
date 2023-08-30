@@ -28,6 +28,7 @@ function ProductDetail() {
 
   return (
     <>
+    <div className="container-flex">
       <div className="card-product-col">
         <div className="nav-back">
           <LeftOutlined />
@@ -65,6 +66,7 @@ function ProductDetail() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

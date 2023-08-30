@@ -148,11 +148,20 @@ const Header = () => {
 
               <li>
                 <Link
-                  to="/Contact"
+                  to="/contact"
                   onClick={closeMenu}
                   className="btn-hover-line"
                 >
                   About us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/prueba"
+                  onClick={closeMenu}
+                  className=" prueba"
+                >
+                  Prueba
                 </Link>
               </li>
             </ul>

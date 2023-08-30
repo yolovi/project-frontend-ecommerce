@@ -1,23 +1,36 @@
 @import "../../variables.scss";
 
+
+
 .footer {
   border-top: $gray-color 1px solid;
-  padding-top: 12px;
+ // padding-top: 12px;
   color: $gray-dark-color;
+}
+
+.footer h4 {
+ margin: 0.5rem, 0;
+}
+
+.footer p {
+  margin: 5px;
 }
 
 .footer-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
   text-align: center;
+  align-content: center;
+  align-items: center;
 
   @media (min-width: 768px) {
     flex-direction: row; /* Cambia de nuevo a fila para pantallas más grandes */
-    align-items: baseline;
+    align-items: start;
+    padding-top: 10px;
   }
+
 }
 
 .footer p {

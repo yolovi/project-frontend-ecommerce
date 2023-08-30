@@ -44,7 +44,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="container-form">
+      <div className="container-flex">
         <div className="card">
           <h2 className='title' >Register</h2>
 

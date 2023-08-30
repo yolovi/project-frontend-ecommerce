@@ -61,17 +61,17 @@ const Footer = () => {
                 <TwitterOutlined />
               </a>
             </span>
-            {/* <span> {pinterest} </span> */}
+            {/* <p> {pinterest} </p> */}
           </Col>
         </Row>
         <Row>
           <Col span={24}>
-            <p className="footer-by">
+            <div className="footer-by">
               A project by{" "}
               <a href="https://github.com/yolovi" target="_blank">
                 Yolanda López
               </a>
-            </p>
+            </div>
           </Col>
         </Row>
       </footer>
