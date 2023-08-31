@@ -6,9 +6,20 @@ td {
   color: $secondary-color;
 }
 
+.cart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cart {
+  min-width: 600px;
+}
+
 .container-cart {
   margin: 40px 0;
-
 }
 
 .container-btn-cart {
@@ -17,18 +28,6 @@ td {
   align-items: center;
   margin-top: 8px;
   margin-bottom: 8px;
-}
-
-.cart {
-  min-width: 600px;
-}
-
-.cart-empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
 }
 
 .cart-table-flex {
@@ -74,13 +73,11 @@ td {
 
 @media (max-width: 768px) {
   td {
-      padding: 0;
-      padding-right: 6px;
-    }
-
-
+    padding: 0;
+    padding-right: 6px;
+  }
 
   .table-header {
     padding: 10px 0 4px 0;
   }
-  }
+}

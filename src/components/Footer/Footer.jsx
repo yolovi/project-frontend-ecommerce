@@ -1,24 +1,13 @@
-//TODO:
-//viw example: https://lostine.com/
-//Contact Us
-//FAQ's
-//Shipping and return policy
-//Newsletter > susbsribe
-//Follow us > icons social media (fb ig)
-
-import { Col, Row } from "antd";
 import "./Footer.scss";
+import { Col, Row } from "antd";
 import { Link } from "react-router-dom";
 import {
   FacebookOutlined,
   InstagramOutlined,
   TwitterOutlined,
 } from "@ant-design/icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faInstagram } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
-  //const pinterest = <FontAwesomeIcon icon={faInstagram} />
 
   return (
     <>
@@ -61,7 +50,6 @@ const Footer = () => {
                 <TwitterOutlined />
               </a>
             </span>
-            {/* <p> {pinterest} </p> */}
           </Col>
         </Row>
         <Row>

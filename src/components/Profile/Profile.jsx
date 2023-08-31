@@ -1,8 +1,8 @@
+import "./Profile.scss";
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin, Space, Card, Collapse } from "antd";
-import "./Profile.scss";
 import dayjs from "dayjs";
 
 const antIcon = (
@@ -25,10 +25,8 @@ const GetUserLogged = () => {
     return <Spin indicator={antIcon} />;
   }
 
-  //ant design collapse list
 
   const orderInfo = user.Orders.map((order) => ({
-    element: console.log(order),
     key: order.id,
     label: (
       <div className="label-orders">
@@ -66,12 +64,6 @@ const GetUserLogged = () => {
                 <td colSpan="6" className="table-header">
                   <span>Total price:</span> <span> €</span>
                 </td>
-                {/* Hacer la funcionalidad para calcular el precio total productos cuando tenga tb los datos de cantidad de productos */}
-                {/* <td> {item.price.toFixed(2)} €</td>
-              <td className="price-qty">
-                {" "}
-                {item.price.toFixed(2) * qty} €{" "}
-              </td> */}
               </tr>
             </tbody>
           </table>
@@ -81,7 +73,6 @@ const GetUserLogged = () => {
   }));
 
   const onChange = (key) => {
-    console.log(key);
   };
 
   return (
@@ -133,50 +124,3 @@ const GetUserLogged = () => {
 
 export default GetUserLogged;
 
-//   {/* // ORDER TABLE-------------------------------- */}
-//   <div className="container-orders">
-//   <table className=".container-table">
-//     <thead>
-//       <tr>
-//       <th>Order ID</th>
-//         <th>Date</th>
-//         <th>Quantity</th>
-//         <th>Total Price</th>
-//         <th>State</th>
-//         <th>Invoice</th>
-//       </tr>
-//     </thead>
-//     <tbody>
-//       {/* <tr>
-//         <td>date 01/01/01</td>
-//         <td>4</td>
-//         <td>40 €</td>
-//         <td>send</td>
-//         <td>show invoice</td>
-//       </tr> */}
-//        {user.Orders.map((order) => (
-//         <tr key={order.id}>
-//           <td>{order.id}</td>
-//           <td>{order.createdAt}</td>
-//           <td> order.quantity </td>
-//           <td> order.totalPrice </td>
-//           <td> order.state </td>
-//           <td> order.invoice </td>
-//         </tr>
-//       ))}
-//     </tbody>
-//     <tfoot>
-//       <tr>
-//         <td>
-//           <button
-//             type="button"
-//             onClick={() => setExpanded(!expanded)}
-//             // disabled={orders.length === 0}
-//           >
-//             {/* {expanded ? "Collapse" : "Expand"} */}
-//           </button>
-//         </td>
-//       </tr>
-//     </tfoot>
-//   </table>
-// </div>

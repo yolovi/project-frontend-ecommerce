@@ -1,6 +1,5 @@
+import "./Contact.scss";
 import React, { useState } from "react";
-import'./Contact.scss';
-
 
 const Contact = () => {
   const [selectedSubject, setSelectedSubject] = useState("");
@@ -14,10 +13,15 @@ const Contact = () => {
       <div id="container-contact">
         <h2 className="title"> Keep in Touch </h2>
         <div className="underline"></div>
-        <form action="#" method="post" id="contact_form" className="form-contact">
+        <form
+          action="#"
+          method="post"
+          id="contact_form"
+          className="form-contact"
+        >
           <div className="name contact">
             <label htmlFor="name"></label>
-            <input className="contact"
+            <input
               type="text"
               placeholder="My name is"
               name="name"
@@ -27,7 +31,7 @@ const Contact = () => {
           </div>
           <div className="email contact">
             <label htmlFor="email"></label>
-            <input className="contact"
+            <input
               type="email"
               placeholder="My e-mail is"
               name="email"
@@ -35,9 +39,9 @@ const Contact = () => {
               required
             />
           </div>
-          <div className="telephone contact">
-            <label htmlFor="name"></label>
-            <input className="contact"
+          <div className="contact">
+            <label htmlFor="telephone"></label>
+            <input
               type="text"
               placeholder="My number is"
               name="telephone"
@@ -45,26 +49,24 @@ const Contact = () => {
               required
             />
           </div>
-
-          <div className="orderNumber contact">
+          <div className="contact">
             <label htmlFor="orderNumber"></label>
-            <input className="contact"
+            <input
               type="text"
               placeholder="Order number"
               name="orderNumber"
               id="orderNumber"
             />
           </div>
-
           <div className="subject contact">
             <label htmlFor="subject"></label>
-            <select className="contact"
+            <select
               placeholder="Subject line"
               name="subject"
               id="subject_input"
               required
-              value={selectedSubject} // Agrega este prop para controlar la opción seleccionada
-              onChange={handleSubjectChange} // Agrega esto para manejar el cambio de selección
+              value={selectedSubject} 
+              onChange={handleSubjectChange} 
             >
               <option disabled hidden value="">
                 Subject line
@@ -74,10 +76,9 @@ const Contact = () => {
               <option value="proposal">I'd like to make a proposal</option>
             </select>
           </div>
-
           <div className="msg-contact contact">
             <label htmlFor="message"></label>
-            <textarea className="contact"
+            <textarea
               name="message"
               placeholder="I'd like to chat about"
               id="message_input"
@@ -85,11 +86,18 @@ const Contact = () => {
               rows="5"
               required
             ></textarea>
-            <h3>Please provide all the information about your issue you can.</h3> 
+            <h3>
+              Please provide all the information about your issue you can.
+            </h3>
           </div>
-          {/* //FIXME: aplicar estilo btn-black*/}
-
-          <button className="btn-black" type="submit" form="contact" value="Send">Send</button>
+          <button
+            className="btn-black"
+            type="submit"
+            form="contact"
+            value="Send"
+          >
+            Send
+          </button>
         </form>
       </div>
     </div>

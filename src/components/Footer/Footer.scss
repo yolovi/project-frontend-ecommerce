@@ -1,63 +1,56 @@
 @import "../../variables.scss";
 
-
-footer .header-content-logo {
-  font-size: 30px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 4rem;
-
-}
-
 .footer {
   border-top: $gray-color 1px solid;
-  // padding-top: 12px;
   color: $gray-dark-color;
-}
 
-.footer h4 {
-  margin: 0.5rem, 0;
-}
+  .header-content-logo {
+    font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+  }
 
-.footer p {
-  margin: 5px;
-}
+  h4 {
+    margin: 0.5rem 0;
+  }
 
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-around;
-  text-align: center;
-  align-content: center;
-  align-items: center;
+  p {
+    margin: 5px;
+    padding: 0;
+  }
 
-  @media (min-width: 768px) {
-    flex-direction: row; /* Cambia de nuevo a fila para pantallas más grandes */
-    align-items: start;
-    padding-top: 10px;
+  &-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: start;
+      padding-top: 10px;
+    }
+  }
+
+  &-by {
+    font-size: 0.9em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .follow-icons {
+    font-size: xx-large;
+    color: $gray-color;
+    padding: 5px;
+  }
+
+  &-link {
+    color: $gray-dark-color;
+    font-weight: 400;
   }
 }
-
-.footer p {
-  padding: 0;
-}
-.footer-by {
-  font-size: 0.9em;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.follow-icons {
-  font-size: xx-large;
-  color: $gray-color;
-  padding: 5px;
-}
-
-.footer-link {
-  color: $gray-dark-color;
-  font-weight: 400;
-}
-
-

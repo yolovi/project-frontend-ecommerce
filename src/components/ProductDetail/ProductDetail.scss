@@ -1,24 +1,5 @@
 @import "../../variables.scss";
 
-// .container-product-detail {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: flex-start;
-//     gap: 10px;
-//     padding: 10px;
-
-// }
-
-// .image-detail img {
-//     width: 100%;
-// }
-
-// .product-detail {
-//     /* Agrega estilos adicionales según sea necesario */
-//   }
-
-//---------------------------------------------
-
 %card-product {
   padding-left: 20px;
   padding-right: 20px;
@@ -28,10 +9,6 @@
   justify-content: center;
   align-items: initial;
   min-height: 350px;
-  //width: 300px;
-  //gap: 35px;
- // border: 1px solid #555555;
-  //border-radius: 5px;
 }
 
 .card-product-col {
@@ -52,7 +29,7 @@
 .nav-back {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #555555;
+  border-bottom: 1px solid $gray-dark-color;
   padding: 5px;
   gap: 25px;
   margin-bottom: 10px;
@@ -61,7 +38,6 @@
 
 .image-detail {
   max-width: 500px;
-  //border: 1px solid #555555;
 
   & img {
     width: 100%;
@@ -74,7 +50,6 @@
   justify-content: space-around;
   align-items: start;
   text-align: initial;
- // border: 1px solid #555555;
   max-width: 500px;
   padding: 5px;
 }
@@ -82,7 +57,7 @@
 .div-btn {
   display: flex;
   gap: 15px;
-  //border: 1px solid #555555;
+  //border: 1px solid  $gray-dark-color;
   width: 500px;
   padding: 5px;
 }
@@ -93,11 +68,7 @@
   justify-content: center;
   width: 200px;
   gap: 15px;
-  border: 1px dashed #555555;
-}
-
-.btn-cart-detail{
-  
+  border: 1px dashed  $gray-dark-color;
 }
 
 .heart {

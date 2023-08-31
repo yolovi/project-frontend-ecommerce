@@ -1,17 +1,13 @@
 @import "../../variables.scss";
 
-.contact input {
-  line-height: normal;
-}
 
-.contact textarea {
-  overflow: auto;
-}
-
-.container-flex {
-  display: flex;
-    justify-content: space-around;
-    align-items: center;
+h1 {
+  color: $gray-dark-color;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 #container-contact {
@@ -20,61 +16,71 @@
   position: relative;
 }
 
+.container-flex {
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.contact {
+  input {
+    line-height: normal;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    background: none;
+    border: none;
+    border-bottom: solid 2px $gray-dark-color;
+    color: $gray-dark-color;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0em 0 1.875em 0;
+    padding: 0 0 0.875em 0;
+    width: 100%;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    outline: none;
+    padding: 0 0 0.875em 0;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  textarea {
+    overflow: auto;
+    line-height: 150%;
+    height: 150px;
+    resize: none;
+    width: 100%;
+  }
+
+
+
+}
+
+
 .form-contact {
   margin: 40px 0;
 }
 
-h1 {
-  color: #474544;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 7px;
-  text-align: center;
-  text-transform: uppercase;
+.name {
+  float: left;
+  width: 45%;
 }
 
 .email {
   float: right;
   width: 45%;
 }
-
-.contact input[type="text"],
-[type="email"],
-select,
-textarea {
-  background: none;
-  border: none;
-  border-bottom: solid 2px #474544;
-  color: #474544;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  margin: 0em 0 1.875em 0;
-  padding: 0 0 0.875em 0;
-  //text-transform: uppercase;
-  width: 100%;
-}
-
-//para que no aparezca el borde al clicar:
-.contact input[type="text"]:focus,
-[type="email"]:focus,
-textarea:focus {
-  outline: none;
-  padding: 0 0 0.875em 0;
-}
-
-.contact select::-ms-expand {
-  display: none;
-}
-
-.contact textarea {
-  line-height: 150%;
-  height: 150px;
-  resize: none;
-  width: 100%;
-}
-
-//---------------
 
 .msg-contact {
   float: none;
@@ -89,31 +95,10 @@ textarea:focus {
   text-align: start;
 }
 
-.name {
-  float: left;
-  width: 45%;
-}
-
-.subject {
-  width: 100%;
-}
-
-.telephone {
-  width: 100%;
-}
-
-:-moz-placeholder {
-  color: #474544;
-  opacity: 1;
-}
-
-::-moz-placeholder {
-  color: #474544;
-  opacity: 1;
-}
-
+:-moz-placeholder,
+::-moz-placeholder,
 :-ms-input-placeholder {
-  color: #474544;
+  color: $gray-dark-color;
 }
 
 @media screen and (max-width: 768px) {

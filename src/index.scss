@@ -2,10 +2,6 @@
 
 :root {
 
-  // grid-template-rows: unset;
-  // align-content: space-between;
-  // align-items: start;
-
   font-family: $primary-font;
   line-height: 1.5;
   font-weight: 400;
@@ -26,8 +22,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-
 
 a {
   font-weight: 500;
@@ -51,7 +45,6 @@ p {
   margin-inline-end: 0px;
 }
 
-//---------------------
 
 .title {
   letter-spacing: 2px;

@@ -3,12 +3,11 @@
 #root {
   max-width: 1920px;
   margin: 0 auto;
-  /* padding: 2rem; */
   text-align: center;
 
   display: grid;
-  grid-template-rows: auto 1fr auto; /* 1fr para el contenido principal, auto para el footer //FIXME: el contenido por debajo de header se queda muy bajo y el nav muy grande */
-  min-height: 100vh; /* Establece el alto mínimo de la vista */
+  grid-template-rows: auto 1fr auto; 
+  min-height: 100vh; 
 }
 
 @keyframes logo-spin {
@@ -30,7 +29,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-
   margin: 0 20px 40px 20px;
 }
 

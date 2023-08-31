@@ -1,3 +1,4 @@
+import "./Header.scss";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/UserContext/UserState";
@@ -11,10 +12,7 @@ import {
 } from "@ant-design/icons";
 import { Badge } from "antd";
 import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-import "./Header.scss";
 import BtnTop from "../assets/BtnTop/BtnTop";
-
-//Implementamos Logout en el nav para que esté accesible desde cualquier parte de la página, pero la lógica está en el componente Logout.
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -41,9 +39,6 @@ const Header = () => {
     }
   }, [size.width, menuOpen]);
 
-  //La siguiente línea de código invierte el estado actual de menuOpen, lo que permite abrir o cerrar el menú según su estado anterior
-  //Si menuOpen era true, entonces p será true, y !p será false, lo que cerrará el menú.
-  //Si menuOpen era false, entonces p será false, y !p será true, lo que abrirá el menú.
   const menuToggleHandler = () => {
     setMenuOpen((prevState) => !prevState);
   };
@@ -53,16 +48,14 @@ const Header = () => {
     }
   };
 
-  const { token, logout } = useContext(UserContext); //importamos el logout del userContext(UserState) para poder usar la función en la función logoutUser que vamos a crear
+  const { token, logout } = useContext(UserContext);
   const { cart } = useContext(ProductsContext);
   const navigate = useNavigate();
   const logoutUser = () => {
-    logout(); //desloguea al presionar el botón
+    logout();
     navigate("/login");
   };
 
-  //se ejecuta cuando el componente cambia (en este caso [cart])
-  //con el siguiente useEffect lo que hará es que cada vez que cambie el estado del carrito que lo guarde en el localStorage (esto lo hace cada vez que se añade un producto al carrito)
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -131,7 +124,7 @@ const Header = () => {
                       className="btn-hover-line"
                     >
                       {" "}
-                      Login{" "}<UserOutlined />
+                      Login <UserOutlined />
                     </Link>
                     <Link
                       to="/register"
@@ -143,7 +136,6 @@ const Header = () => {
                   </div>
                 )}
               </li>
-
               <li>
                 <Link
                   to="/contact"

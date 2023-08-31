@@ -1,12 +1,10 @@
-import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import axios from "axios";
-//import { Card, Space } from "antd";
-import { ProductsContext } from "../../context/ProductsContext/ProductsState";
-//import Meta from "antd/es/card/Meta";
 import "./ProductDetail.scss";
+import React, { useContext, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import { LeftOutlined, HeartOutlined, HeartFilled } from "@ant-design/icons";
+import axios from "axios";
 
 const API_URL = "http://localhost:3000";
 
@@ -24,7 +22,6 @@ function ProductDetail() {
     getProduct();
   }, []);
 
-  console.log(product);
 
   return (
     <>
@@ -32,7 +29,7 @@ function ProductDetail() {
       <div className="card-product-col">
         <div className="nav-back">
           <LeftOutlined />
-          <a>Back to products</a>
+          <Link to={"/"}><a>Back to products</a></Link>         
         </div>
         <div className="card-content-row">
           <div className="image-detail" key={product.id}>
@@ -41,7 +38,6 @@ function ProductDetail() {
           <div className="card-detail">
             <div className="product-detail">
               <h2>{product.name_product}</h2>
-              {/* //FIXME: category name no //description={product.Category.name_category} */}
               <h5>Category: {product.CategoryId}</h5>
               id
               <h3>Description</h3>
@@ -57,11 +53,9 @@ function ProductDetail() {
               <p>Quantity + -</p>
             </div>
             <div className="div-btn">
-              {/* para que no se ejecute autom. la función de addCart y se convierte en un bucle, hay que meterla dentro de una función, para que se ejecute solo al clicar */}
               <button className="btn-large" onClick={() => addCart(product)}>ADD TO CART</button>
               <button className="btn-wish" onClick={() => alert("do the function add favs")}>
                 ADD TO WISHLIST <HeartOutlined className="heart" />
-                {/* <HeartFilled className="heart"/> */}
               </button>
             </div>
           </div>

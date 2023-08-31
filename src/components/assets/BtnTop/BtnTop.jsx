@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
 import "./BtnTop.scss";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const BtnTop = () => {
-  // const iconAwsome = <FontAwesomeIcon icon={faChevronUp} />;
   const [showButton, setShowButton] = useState(false);
 
   const handleScrollButton = () => {

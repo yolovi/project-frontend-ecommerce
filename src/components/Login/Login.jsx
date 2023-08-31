@@ -1,8 +1,8 @@
+import "./Login.scss";
 import React, { useContext, useState } from "react";
 import { notification } from "antd";
 import { UserContext } from "../../context/UserContext/UserState";
 import { Link, useNavigate } from "react-router-dom";
-import "./Login.scss";
 
 const Login = () => {
   const { login } = useContext(UserContext);
@@ -21,13 +21,12 @@ const Login = () => {
       });
     } else {
       try {
-        await login({ email, password }); // Call the login function from context
+        await login({ email, password }); 
         notification.success({
           message: "Successfully logged",
           description: "Welcome to our e-commerce",
         });
-        setTimeout(() => {
-          //setTimeout para que le de tiempo a procesar la información
+        setTimeout(() => {         
           navigate("/profile");
         }, 3000);
       } catch (error) {
@@ -93,6 +92,5 @@ const Login = () => {
   );
 };
 
-//------
 
 export default Login;
