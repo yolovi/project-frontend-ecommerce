@@ -3,6 +3,7 @@ import { UserContext } from "../../context/UserContext/UserState";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin, Space, Card, Collapse } from "antd";
 import "./Profile.scss";
+import dayjs from "dayjs";
 
 const antIcon = (
   <LoadingOutlined
@@ -26,25 +27,19 @@ const GetUserLogged = () => {
 
   //ant design collapse list
 
-  const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
-
   const orderInfo = user.Orders.map((order) => ({
     element: console.log(order),
     key: order.id,
     label: (
       <div className="label-orders">
         <span>Order nº {order.id}</span>
-        <span>Date: {order.createdAt}</span>
+        <span>Date: {dayjs(order.createdAt).format('DD-MM-YYYY')}</span>
         <span>Itmes</span>
         <span>Total Price</span>
         <span>State</span>
       </div>
     ),
-    //children: order.Products.map((item) => console.log(item)),
+   
     children: order.Products.map((item) => {
       return (
         <div className="profile-table-flex">

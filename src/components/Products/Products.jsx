@@ -40,7 +40,8 @@ const Products = () => {
                 />
                 <p>{product.price.toFixed(2)} €</p>
 
-                <div className="quantity-controls">
+                {/* //FIXME: quantity controls: cambiar el estado del carrito al añadir desde boton o desabilitar add cart y cambiar cantidad en carrito */}
+                {/* <div className="quantity-controls">
                   <button
                     onClick={() =>
                       setProductQuantity(product.id, product.quantity - 1)
@@ -57,7 +58,7 @@ const Products = () => {
                   >
                     +
                   </button>
-                </div>
+                </div> */}
 
                 {/* para que no se ejecute autom. la función de addCart y se convierte en un bucle, hay que meterla dentro de una función, para que se ejecute solo al clicar */}
                 {/* <button onClick={() => addCart(product)}>Add Cart</button> */}
