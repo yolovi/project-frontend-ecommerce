@@ -68,12 +68,15 @@ const Cart = () => {
     );
   }
 
+ 
+
   const productList = cart.map((product) => ({
     id: product.id,
     title: product.name_product,
     price: product.price,
-    image: product.image_path,
+    image: product.image_url,
   }));
+  
 
   return (
     <div className="container-flex">
@@ -92,11 +95,17 @@ const Cart = () => {
             </div>
           }
           bordered
-          dataSource={productList} // Cambia esto a un array de objetos
+          dataSource={productList} 
           renderItem={(item) => (
             <div className="cart-table-flex">
               <table key={item.id}>
                 <tbody>
+                   {/* Encabezado de la fila */}
+                   <tr>
+                    <td colSpan="3" className="table-header">
+                    <img className="img-cart" alt="product-img" src={item.image} /> 
+                    </td>
+                  </tr>
                   {/* Encabezado de la fila */}
                   <tr>
                     <td colSpan="3" className="table-header">
@@ -125,7 +134,7 @@ const Cart = () => {
 
 export default Cart;
 
-//ESTRUCTURA CART
+//ESTRUCTURA CART nueva solo con div para hacerla responsive Adaptar a la estructura que hay ahora
 // return (
 // <div className="container-flex">
 // <div className="cart-container">
