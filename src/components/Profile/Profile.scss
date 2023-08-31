@@ -1,28 +1,23 @@
 @import "../../variables.scss";
 
-//extend / herencia (@extend le permite compartir un conjunto de propiedades CSS de un selector a otro)
+.label-orders {
+  display: flex;
+  justify-content: space-around;
 
-%message-shared {
-  border: 1px solid #ccc;
-  padding: 10px;
-  color: #333;
 }
-.message {
-  @extend %message-shared;
-}
-.message-success {
-  @extend %message-shared;
-  border-color: green;
-}
-
-//----------------------
-
 
 .container-profile {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-around;
   padding: 5%;
+}
+
+.container-profile-info{
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .container {
@@ -112,4 +107,14 @@
 }
 .info span {
   color: #1a1a1a;
+}
+
+
+.profile-table-flex {
+  
+}
+
+.collapse-orders{
+  margin: 40px 0;
+
 }
