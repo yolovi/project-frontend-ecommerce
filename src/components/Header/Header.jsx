@@ -14,8 +14,6 @@ import { ProductsContext } from "../../context/ProductsContext/ProductsState";
 import "./Header.scss";
 import BtnTop from "../assets/BtnTop/BtnTop";
 
-//prueba6@example.com // para hacer las pruebas la password es pass
-
 //Implementamos Logout en el nav para que esté accesible desde cualquier parte de la página, pero la lógica está en el componente Logout.
 
 const Header = () => {
@@ -152,16 +150,7 @@ const Header = () => {
                   onClick={closeMenu}
                   className="btn-hover-line"
                 >
-                  About us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/prueba"
-                  onClick={closeMenu}
-                  className=" prueba"
-                >
-                  Prueba
+                  Contact
                 </Link>
               </li>
             </ul>

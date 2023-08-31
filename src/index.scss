@@ -27,31 +27,7 @@
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: $secondary-color;
-    background-color: $primary-color;
-  }
-  a:hover {
-    color: $complementary-color;
-  }
-  // button {
-  //   background-color: #f9f9f9;
-  // }
-}
 
-@media (max-width: 768px) {
-  .btn {
-    &-hover-line {
-      background: transparent;
-      border: none;
-      padding: 1em 1.5em;
-      color: $primary-color;
-      position: relative;
-      transition: 0.5s ease;
-    }
-  }
-}
 
 a {
   font-weight: 500;
@@ -61,14 +37,6 @@ a {
 a:hover {
   color: $complementary-color;
 }
-
-// body {
-//   margin: 0;
-//   //display: flex;
-//   //place-items: column;
-//   min-width: 320px;
-//   min-height: 100vh;
-// }
 
 h1 {
   font-size: 3.2em;
@@ -101,7 +69,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(15, 15, 15);
+  background-color: $secondary-color;
   border: none;
   border-radius: 0%;
   color: $primary-color;
@@ -212,4 +180,35 @@ p {
   }
 }
 
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: $secondary-color;
+    background-color: $primary-color;
+  }
+  a:hover {
+    color: $complementary-color;
+  }
+}
+
+@media (max-width: 768px) {
+  .btn {
+    &-hover-line {
+      background: transparent;
+      border: none;
+      padding: 1em 1.5em;
+      color: $primary-color;
+      position: relative;
+      transition: 0.5s ease;
+    }
+  }
+
+  .btn-cart {
+    @extend %btn-black;
+    width: 120px;
+    &::before {
+      width: 120px;
+    }
+  }
+}
 

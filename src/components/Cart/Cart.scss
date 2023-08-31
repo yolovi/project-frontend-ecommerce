@@ -1,11 +1,15 @@
-
+@import "../../variables.scss";
 
 td {
-  padding: 12px 15px;
-  background-color: #f4f4f4;
-  color: black;
+  padding: 12px 25px;
+  background-color: $primary-color;
+  color: $secondary-color;
 }
 
+.container-cart {
+  margin: 40px 0;
+
+}
 
 .container-btn-cart {
   display: flex;
@@ -36,61 +40,47 @@ td {
   flex-direction: column;
 }
 
-.img-cart{
-    max-width: 250px;
+.img-cart {
+  max-width: 100px;
 }
 
-//-------------------------------
-
-.container-cart {
-  //border: 2px solid blue;
-  margin: 4px;
-  min-width: 600px;
+.btn-link-container {
+  margin-bottom: 20px;
 }
 
-.container-item {
-  border: 2px solid rgb(224, 78, 46);
-  margin: 4px;
-
-  display: flex;
+%btn-qty {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  text-align: center;
+  border: none;
+  border-radius: 0%;
+  background-color: $gray-color;
 }
 
-.container-img {
-  border: 2px dashed rgb(156, 13, 106);
-  margin: 4px;
+.btn-qty {
+  @extend %btn-qty;
 }
 
-.item {
-  border: 2px dashed rgb(156, 13, 106);
-  margin: 4px;
+.span-qty {
+  @extend %btn-qty;
+  background-color: transparent;
 }
 
-.item-info {
-  border: 2px dashed rgb(13, 156, 30);
-  margin: 4px;
+.price-qty {
+  font-size: medium;
+  font-weight: 600;
 }
 
-.item-price {
-  border: 2px dashed rgb(13, 156, 30);
-  margin: 4px;
-}
+@media (max-width: 768px) {
+  td {
+      padding: 0;
+      padding-right: 6px;
+    }
 
-.item-quantity {
-  border: 2px dashed rgb(13, 156, 30);
-  margin: 4px;
-}
 
-.price-total-item {
-  border: 2px dashed rgb(156, 13, 106);
-  margin: 4px;
-}
 
-.container-checkout {
-  border: 2px solid rgb(224, 78, 46);
-  margin: 4px;
-}
-
-.container-clear {
-  border: 2px dashed rgb(156, 13, 106);
-  margin: 4px;
-}
+  .table-header {
+    padding: 10px 0 4px 0;
+  }
+  }

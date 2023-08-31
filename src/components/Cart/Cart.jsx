@@ -12,8 +12,8 @@ const Cart = () => {
 
   const [productsMap, setProductsMap] = useState(new Map());
 
-   const checkout = async () => {
-     const token = JSON.parse(localStorage.getItem("token")); //para dar acceso al usuario autenticado(si en la ruta backend lo solicita): recogemos token de usuario loggeado y se lo pasamos por headers al authoritation
+  const checkout = async () => {
+    const token = JSON.parse(localStorage.getItem("token")); //para dar acceso al usuario autenticado(si en la ruta backend lo solicita): recogemos token de usuario loggeado y se lo pasamos por headers al authoritation
 
     await axios.post(
       API_URL + "/orders",
@@ -30,6 +30,11 @@ const Cart = () => {
 
     setProductsMap(new Map());
   };
+
+  //FIXME: 
+  //cambiar estado del cart al sumar restar con las funciones handleIncrement / handleDecrement
+  //al crear pedido que se muestren las cantidades compradas de cada producto.
+  //pasar al ProductsContext la parte del estado
 
   const handleIncrement = (productId) => {
     const updatedMap = new Map(productsMap);
@@ -68,15 +73,12 @@ const Cart = () => {
     );
   }
 
- 
-
   const productList = cart.map((product) => ({
     id: product.id,
     title: product.name_product,
     price: product.price,
     image: product.image_url,
   }));
-  
 
   return (
     <div className="container-flex">
@@ -95,37 +97,58 @@ const Cart = () => {
             </div>
           }
           bordered
-          dataSource={productList} 
-          renderItem={(item) => (
-            <div className="cart-table-flex">
-              <table key={item.id}>
-                <tbody>
-                   {/* Encabezado de la fila */}
-                   <tr>
-                    <td colSpan="3" className="table-header">
-                    <img className="img-cart" alt="product-img" src={item.image} /> 
-                    </td>
-                  </tr>
-                  {/* Encabezado de la fila */}
-                  <tr>
-                    <td colSpan="3" className="table-header">
-                      <h4>{item.title}</h4>
-                    </td>
-                  </tr>
-                  {/* Filas de detalles */}
-                  <tr>
-                    <td>Amount: {productsMap.get(item.id) || 1}</td>
-                    <td>
-                      <button onClick={() => handleDecrement(item.id)}>-</button>
-                      <span>{productsMap.get(item.id) || 0}</span>
-                      <button onClick={() => handleIncrement(item.id)}>+</button>
-                    </td>
-                    <td> {item.price.toFixed(2)} €</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          )}
+          dataSource={productList}
+          renderItem={(item) => {
+            const qty = productsMap.get(item.id) || 1;
+            return (
+              <div className="cart-table-flex">
+                <table key={item.id}>
+                  <tbody>
+                    {/* Encabezado de la fila */}
+                    <tr>
+                      <td colSpan="6" className="table-header">
+                        <h4>{item.title}</h4>
+                      </td>
+                    </tr>
+                    {/* Filas de detalles */}
+                    <tr>
+                      <td colSpan="3" className="table-header">
+                        <img
+                          className="img-cart"
+                          alt="product-img"
+                          src={item.image}
+                        />
+                      </td>
+                      <td>
+                        <button
+                          className="btn-qty"
+                          onClick={() => handleDecrement(item.id)}
+                        >
+                          -
+                        </button>
+                        <span className="span-qty">
+                          {/* {productsMap.get(item.id) || 0} // to put remove function at 0 */}
+                          {qty}
+                        </span>
+                        <button
+                          className="btn-qty"
+                          onClick={() => handleIncrement(item.id)}
+                        >
+                          +
+                        </button>
+                      </td>
+
+                      <td> {item.price.toFixed(2)} €</td>
+                      <td className="price-qty">
+                        {" "}
+                        {item.price.toFixed(2) * qty} €{" "}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }}
         />
       </div>
     </div>
