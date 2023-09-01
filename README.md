@@ -38,6 +38,10 @@ Implemented:
 - Reducer
 - Sass
 
+Extras Implemented:
+- [✔] Using Multer in the backend to handle image uploads for use in the frontend. All products are from the database.
+- [✔] Contact view.
+- [✔] Users can view their orders in their profile.
 
 
 Note that this project was completed within a very limited timeframe as part of an exercise for The Bridge Valencia's FullStack Bootcamp.
@@ -69,7 +73,6 @@ Note that this project was completed within a very limited timeframe as part of 
 - [ ] Users can only edit and delete the reviews they create.
 - [ ] Users can upload photos in reviews or change their profile picture.
 - [ ] Users can like reviews of products.
-- [ ] Users can view their orders in their profile.
 - [ ] Implementation of guards (security measures)
 - [ ] Ensure responsiveness.
 
